@@ -1,0 +1,445 @@
+{
+  "months": [
+    {
+      "id": 1,
+      "title": "Python asoslari va dasturlash poydevori",
+      "subtitle": "Dasturlash tafakkurini shakllantirish",
+      "icon": "🐍",
+      "color": "blue",
+      "description": "Birinchi oyda siz Python dasturlash tilini noldan o'rganasiz. O'zgaruvchilar, sikllar, funksiyalar, ma'lumotlar tuzilmasi — bularning barchasini amaliy mashqlar orqali o'zlashtirasiz. AI faqat tushuntirish va savolga javob berish uchun ishlatiladi.",
+      "weeks": [
+        {
+          "id": 1,
+          "title": "Muhit sozlash va Python asoslari",
+          "goal": "Dasturlash muhitini o'rnatib, Python'ning asosiy sintaksisini o'rganish va birinchi dasturlarni yozish.",
+          "tasks": [
+            "Python va kod muharriri (VS Code) o'rnating yoki Replit onlayn muhitidan foydalaning",
+            "GitHub akkaunt oching — keyinchalik kod saqlash uchun kerak bo'ladi",
+            "Python asoslarini o'rganing: o'zgaruvchilar (variables), ma'lumot turlari (int, str, list, dict), sikllar (for, while), shartlar (if/elif/else), funksiyalar (def)",
+            "Kichik dasturlar yozing: salomlash dasturi, oddiy kalkulyator, sonlar ro'yxatidan eng kattasini topish",
+            "MUHIM: Hamma kodni o'zingiz yozing — AI avtoto'ldirish ishlatmang!",
+            "Xatoliklarni tushunishni mashq qiling: ataylab xato yozing va xabarni o'qib tuzating"
+          ],
+          "deliverable": "3-5 ta mustaqil ishlaydigan Python dastur (salomlash, kalkulyator, ro'yxat bilan ishlash)",
+          "resources": [
+            {"title": "Codecademy: Learn Python 3", "url": "https://www.codecademy.com/learn/learn-python-3", "type": "course"},
+            {"title": "Python rasmiy tutorial", "url": "https://docs.python.org/3/tutorial/", "type": "docs"},
+            {"title": "Replit — onlayn kod yozish", "url": "https://replit.com", "type": "tool"},
+            {"title": "VS Code — kod muharriri", "url": "https://code.visualstudio.com", "type": "tool"}
+          ],
+          "technologies": ["Python", "VS Code", "Replit", "Git"],
+          "aiUsage": "Faqat tushuntirish so'rang: 'Bu xato nimani anglatadi?', 'List va tuple farqi nima?' AI kod yozib bermaydi — siz yozasiz."
+        },
+        {
+          "id": 2,
+          "title": "Ma'lumotlar tuzilmasi va muammolarni yechish",
+          "goal": "Python'ning asosiy ma'lumotlar tuzilmalarini chuqurroq o'rganish va algoritmik fikrlashni rivojlantirish.",
+          "tasks": [
+            "List (ro'yxat) va dictionary (lug'at) bilan chuqur ishlang: elementlar qo'shish, o'chirish, qidirish, saralash",
+            "Funksiyalar yozing: parametrlar va qaytish qiymatlari (return) bilan",
+            "Modullar bilan tanishing: math, random, datetime — import qilishni o'rganing",
+            "Masala yechish mashqlari: FizzBuzz, faktorial, palindrom tekshirish, Fibonachchi ketma-ketligi",
+            "AI'ni 'rezina o'rdak' sifatida ishlating — yondashuvingizni tushuntiring va AI'dan baho so'rang",
+            "Kichik loyiha: Matnli (console) vazifalar boshqaruvchisi — vazifa qo'shish, ko'rish, bajarish, chiqish"
+          ],
+          "deliverable": "Console'da ishlaydigan 'Vazifalar ro'yxati' (To-Do List) dasturi",
+          "resources": [
+            {"title": "HackerRank Python", "url": "https://www.hackerrank.com/domains/python", "type": "practice"},
+            {"title": "LeetCode Easy", "url": "https://leetcode.com/problemset/all/?difficulty=EASY", "type": "practice"},
+            {"title": "Think Python (bepul kitob)", "url": "https://greenteapress.com/thinkpython2/", "type": "book"}
+          ],
+          "technologies": ["Python", "Algoritmlar"],
+          "aiUsage": "Yondashuvingizni AI'ga tushuntiring va so'rang: 'Bu mantiq to'g'rimi? Boshqa yo'l bormi?' Kodni AI yozmaydi."
+        },
+        {
+          "id": 3,
+          "title": "OOP (obyektga yo'naltirilgan dasturlash) va Python ekosistemasi",
+          "goal": "Sinflar va obyektlar, xatolarni boshqarish, va Python kutubxonalari bilan tanishish.",
+          "tasks": [
+            "OOP asoslarini o'rganing: class (sinf), __init__, atributlar va metodlar, obyekt yaratish",
+            "Oldingi loyihani OOP bilan qayta yozing: masalan, Task klassi yarating",
+            "Xatolarni boshqarish: try/except bloklar — xato bo'lganda dastur 'sinmasin'",
+            "Oddiy testlar yozing: funksiyalaringiz to'g'ri ishlayotganini assert bilan tekshiring",
+            "requests kutubxonasi bilan ochiq API'dan ma'lumot oling (masalan: ob-havo yoki tasodifiy iqtibos)",
+            "JSON formatini o'rganing — veb-dasturlarda eng ko'p ishlatiladigan format",
+            "Kichik loyiha: Xarajatlar hisoblagich yoki Kontaktlar kitobi (OOP asosida)"
+          ],
+          "deliverable": "OOP asosida ishlangan loyiha (Xarajat tracker yoki Kontaktlar kitobi) + bitta API chaqiruvi misoli",
+          "resources": [
+            {"title": "Real Python: OOP", "url": "https://realpython.com/python3-object-oriented-programming/", "type": "article"},
+            {"title": "requests kutubxonasi", "url": "https://docs.python-requests.org/", "type": "docs"},
+            {"title": "Python JSON moduli", "url": "https://docs.python.org/3/library/json.html", "type": "docs"}
+          ],
+          "technologies": ["Python", "OOP", "API", "JSON"],
+          "aiUsage": "AI'dan OOP tushunchalarini so'rang. Kodni yozib, AI'dan 'review' so'rang: 'Bu koddagi xatoni ko'ryapsanmi?'"
+        },
+        {
+          "id": 4,
+          "title": "Veb asoslari (HTML/CSS) va oylik takrorlash",
+          "goal": "Python bilimlarni mustahkamlash, HTML/CSS asoslarini o'rganish va Flask bilan tanishish.",
+          "tasks": [
+            "Python'da noaniq qolgan mavzularni takrorlang (rekursiya, list comprehension va boshqalar)",
+            "O'zingiz uchun 'Python qo'llanma' — qisqa eslatma varaq tuzing",
+            "HTML asoslari: teglar (h1-h6, p, div, form, button, input), atributlar, sahifa tuzilishi",
+            "CSS asoslari: ranglar, shriftlar, padding/margin, Flexbox bilan oddiy joylashtirish (layout)",
+            "Amaliy mashq: oddiy statik veb-sahifa yarating (shaxsiy profil yoki blog sahifasi)",
+            "Flask bilan 'Salom Dunyo': pip install flask, oddiy marshrut (route) va lokal server ishga tushirish",
+            "AI bilan o'z-o'zingizni tekshiring: 'Python asoslaridan menga savol ber' deb so'rang"
+          ],
+          "deliverable": "Oddiy HTML/CSS sahifa + Flask 'Hello World' lokal serverda ishlaydigan holda",
+          "resources": [
+            {"title": "MDN: HTML asoslari", "url": "https://developer.mozilla.org/en-US/docs/Learn/HTML", "type": "docs"},
+            {"title": "MDN: CSS birinchi qadamlar", "url": "https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps", "type": "docs"},
+            {"title": "Flask rasmiy quickstart", "url": "https://flask.palletsprojects.com/en/stable/quickstart/", "type": "docs"},
+            {"title": "freeCodeCamp: Responsive Web Design", "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/", "type": "course"}
+          ],
+          "technologies": ["Python", "HTML", "CSS", "Flask"],
+          "aiUsage": "AI'dan viktorina (quiz) so'rang. HTML/CSS savollar yuboring. Flask tushunmagan joylarni so'rang."
+        }
+      ],
+      "mindmap": "mindmap\n  root((1-Oy: Python Asoslari))\n    Muhit sozlash\n      Python o'rnatish\n      VS Code / Replit\n      GitHub akkaunt\n    Asosiy tushunchalar\n      O'zgaruvchilar\n      Sikllar va shartlar\n      Funksiyalar\n      Ma'lumot turlari\n    Ma'lumotlar tuzilmasi\n      List va Dict\n      Modullar\n      Algoritmlar\n    OOP\n      Sinflar\n      Obyektlar\n      Xatolarni boshqarish\n    Veb kirish\n      HTML / CSS\n      Flask asoslari"
+    },
+    {
+      "id": 2,
+      "title": "Veb dasturlash — Frontend va Backend",
+      "subtitle": "To'liq veb-ilova yaratish",
+      "icon": "🌐",
+      "color": "purple",
+      "description": "Ikkinchi oyda siz to'liq veb-ilova yaratishni o'rganasiz: HTML/CSS/JavaScript bilan foydalanuvchi interfeysi, Flask bilan server, va SQLite bilan ma'lumotlar bazasi. AI yordamchiga aylanadi — avtoto'ldirish va kod tekshirish uchun.",
+      "weeks": [
+        {
+          "id": 5,
+          "title": "HTML/CSS chuqurlash va JavaScript asoslari",
+          "goal": "Frontend asoslarini mustahkamlash va JavaScript bilan interaktiv sahifalar yaratish.",
+          "tasks": [
+            "HTML'ni chuqurroq o'rganing: semantik teglar (header, main, section, article, nav, footer)",
+            "CSS Flexbox va oddiy responsive dizayn — mobil va desktop'da ishlashini ta'minlash",
+            "JavaScript asoslari: o'zgaruvchilar (let, const), massivlar, obyektlar, funksiyalar (arrow functions)",
+            "DOM manipulyatsiya: document.querySelector, elementlar matnini o'zgartirish, hodisalar (events)",
+            "Amaliy mashq: tugma bosilganda raqam oshiradigan counter yasang",
+            "Forma yarating: ism kiritilganda sahifada salomlash xabari chiqsin (sahifani yangilamasdan)",
+            "AI'dan frontend yordam so'rang: 'CSS'da div'ni qanday markazlashtiriladi?' — tushunib oling"
+          ],
+          "deliverable": "Interaktiv JavaScript sahifa — counter + forma bilan dinamik kontent",
+          "resources": [
+            {"title": "JavaScript.info — zamonaviy JS darsligi", "url": "https://javascript.info/", "type": "course"},
+            {"title": "MDN: JavaScript birinchi qadamlar", "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps", "type": "docs"},
+            {"title": "CSS Flexbox qo'llanma", "url": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/", "type": "article"}
+          ],
+          "technologies": ["HTML", "CSS", "JavaScript", "DOM"],
+          "aiUsage": "AI'dan kichik frontend snippetlar so'rang, lekin har birini 'Explain-Back' qoidasi bilan tushunib oling."
+        },
+        {
+          "id": 6,
+          "title": "Birinchi veb-ilova: Flask + JavaScript + Ma'lumotlar bazasi",
+          "goal": "Frontend va backend'ni bog'lab, ma'lumotlar bazasi bilan to'liq veb-ilova yaratish.",
+          "tasks": [
+            "Flask loyiha tuzing: app.py, marshrutlar (@app.route), Jinja2 shablonlar (templates)",
+            "Flask'dan statik HTML sahifani bering (serve) — brauzerda localhost orqali oching",
+            "JavaScript Fetch API bilan Flask'ga ma'lumot yuboring (POST) va javob oling (JSON)",
+            "SQLite ma'lumotlar bazasi yarating: jadval (CREATE TABLE), yozuv qo'shish (INSERT), o'qish (SELECT)",
+            "Flask marshrut: formadan kelgan ma'lumotni bazaga saqlash va JSON qaytarish",
+            "Yana bir marshrut: bazadagi barcha yozuvlarni JSON sifatida qaytarish (/api/messages)",
+            "Frontendda: /api/messages dan ma'lumotlarni olib, sahifada dinamik ko'rsatish",
+            "Git repoga push qiling — versiya nazoratini boshlang"
+          ],
+          "deliverable": "Ishlaydigan mini veb-ilova: forma → Flask server → SQLite bazasi → dinamik ko'rsatish",
+          "resources": [
+            {"title": "Flask rasmiy tutorial", "url": "https://flask.palletsprojects.com/en/stable/tutorial/", "type": "docs"},
+            {"title": "SQLite Python qo'llanma", "url": "https://docs.python.org/3/library/sqlite3.html", "type": "docs"},
+            {"title": "MDN: Fetch API", "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch", "type": "docs"}
+          ],
+          "technologies": ["Flask", "JavaScript", "SQLite", "SQL", "Fetch API", "Git"],
+          "aiUsage": "SQL sintaksisi va Flask marshrutlari uchun AI'dan yordam so'rang. Xavfsizlik (SQL injection) haqida ham so'rang."
+        },
+        {
+          "id": 7,
+          "title": "Ilovani kengaytirish va AI vositalarini qo'llash",
+          "goal": "Ilovaga yangi funksiyalar qo'shish va AI avtoto'ldirish vositalarini sinab ko'rish.",
+          "tasks": [
+            "Frontend UX'ni yaxshilang: dizaynni chiroyliroq qiling (Bootstrap yoki oddiy CSS bilan)",
+            "Forma validatsiyasi qo'shing: bo'sh maydonlarni tekshirish, xato xabarini ko'rsatish",
+            "Yangi funksiya: elementni o'chirish (DELETE so'rov) yoki tahrirlash imkoniyati",
+            "GitHub Copilot yoki Replit Ghostwriter'ni yoqing va sinab ko'ring",
+            "AI avtoto'ldirish bilan ishlang: taklif tushunarsiz bo'lsa — QABUL QILMANG, tekshiring",
+            "AI'dan kod review so'rang: 'Bu Flask kodimdagi muammolarni ko'rsatib ber'",
+            "AI taklif qilgan yaxshilanishlardan kamida 2-3 tasini amalga oshiring"
+          ],
+          "deliverable": "Kengaytirilgan veb-ilova — validatsiya, delete funksiyasi, AI review'dan keyin yaxshilangan kod",
+          "resources": [
+            {"title": "GitHub Copilot", "url": "https://github.com/features/copilot", "type": "tool"},
+            {"title": "Replit Ghostwriter", "url": "https://replit.com/ai", "type": "tool"},
+            {"title": "Bootstrap framework", "url": "https://getbootstrap.com/", "type": "docs"}
+          ],
+          "technologies": ["Flask", "JavaScript", "GitHub Copilot", "Bootstrap"],
+          "aiUsage": "AI avtoto'ldirish (Copilot/Ghostwriter) sinab ko'ring. Har bir taklif uchun Explain-Back qoidasini qo'llang."
+        },
+        {
+          "id": 8,
+          "title": "Deployment (serverga joylash) va production asoslari",
+          "goal": "Ilovani internet orqali boshqalar foydalana oladigan qilib serverga joylash.",
+          "tasks": [
+            "Ilovani Replit, Railway yoki Render platformasiga deploy qiling",
+            "Muhit o'zgaruvchilari (environment variables) — maxfiy kalitlarni kod ichiga yozmang",
+            "Production server haqida o'rganing: gunicorn, WSGI nima ekanligini tushuning",
+            "Docker haqida asosiy tushuncha: 'Docker nima va nima uchun kerak?' — AI'dan so'rang",
+            "Xavfsizlik tekshiruvi: SQL injection, XSS, CSRF himoyasini o'rganing va qo'llang",
+            "Kodni tozalang, izohlar qo'shing, GitHub'da README yozing",
+            "Ilovani do'stingiz yoki hamkasbingizga ko'rsating va fikr-mulohaza oling"
+          ],
+          "deliverable": "Internetda ishlab turgan veb-ilova (URL bilan) + GitHub'da toza repo",
+          "resources": [
+            {"title": "Railway — deploy platformasi", "url": "https://railway.app/", "type": "tool"},
+            {"title": "Render — bepul hosting", "url": "https://render.com/", "type": "tool"},
+            {"title": "Docker nima? (YouTube)", "url": "https://www.youtube.com/results?search_query=docker+explained+simply", "type": "video"},
+            {"title": "OWASP Top 10 xavfsizlik", "url": "https://owasp.org/www-project-top-ten/", "type": "article"}
+          ],
+          "technologies": ["Deployment", "Railway", "Docker", "Xavfsizlik"],
+          "aiUsage": "AI'dan deployment qadamlarini so'rang: 'Flask ilovani Railway'ga qanday deploy qilaman?' Xavfsizlik maslahatlarini ham oling."
+        }
+      ],
+      "mindmap": "mindmap\n  root((2-Oy: Veb Dasturlash))\n    Frontend\n      HTML semantik teglar\n      CSS Flexbox\n      JavaScript DOM\n      Interaktiv sahifalar\n    Backend\n      Flask framework\n      Marshrutlar va API\n      Jinja2 shablonlar\n    Ma'lumotlar bazasi\n      SQLite\n      SQL so'rovlar\n      CRUD operatsiyalar\n    AI vositalar\n      Copilot\n      Ghostwriter\n      Kod review\n    Deployment\n      Railway / Render\n      Docker tushunchasi\n      Xavfsizlik"
+    },
+    {
+      "id": 3,
+      "title": "Mahorat va yakuniy loyiha",
+      "subtitle": "Haqiqiy ilova yaratish va deploy qilish",
+      "icon": "🏆",
+      "color": "green",
+      "description": "Uchinchi oyda siz barcha bilimlaringizni birlashtirib, to'liq 'production-ready' ilova yaratasiz. Cursor, Claude Code kabi ilg'or AI vositalaridan foydalanasiz. Testlar yozasiz, kodni optimallashtirasiz va ilovani dunyoga taqdim etasiz.",
+      "weeks": [
+        {
+          "id": 9,
+          "title": "Capstone loyihani rejalashtirish va muhit tayyorlash",
+          "goal": "Yakuniy loyihani tanlash, arxitekturasini rejalashtirish va ishchi muhitni to'liq sozlash.",
+          "tasks": [
+            "Yakuniy loyihani tanlang — o'zingizga yaqin soha: HR uchun fikr-mulohaza tizimi, moliya uchun byudjet ilovasi, yoki issue tracker",
+            "Asosiy funksiyalar ro'yxatini tuzing va texnologiyalar stackini belgilang",
+            "Yangi GitHub repo yarating, loyiha tuzilmasini (structure) to'g'rilang",
+            "Ma'lumotlar bazasi sxemasini rejalashtiring — AI yordam bera oladi",
+            "Cursor yoki Claude Code o'rnatib, katta loyihada sinab ko'ring",
+            "Agar SQLAlchemy (ORM) ishlatmoqchi bo'lsangiz — asoslarini o'rganing",
+            "README va dizayn hujjati (design doc) yozing — loyihani boshdan professional qiling"
+          ],
+          "deliverable": "Loyiha rejasi (design doc) + bo'sh lekin tuzilgan repo + ma'lumotlar bazasi sxemasi",
+          "resources": [
+            {"title": "Cursor AI editor", "url": "https://cursor.com/", "type": "tool"},
+            {"title": "Claude Code", "url": "https://claude.ai/", "type": "tool"},
+            {"title": "SQLAlchemy qo'llanma", "url": "https://docs.sqlalchemy.org/en/20/tutorial/", "type": "docs"}
+          ],
+          "technologies": ["Cursor", "Claude Code", "SQLAlchemy", "Loyiha rejalashtirish"],
+          "aiUsage": "AI bilan loyiha arxitekturasini muhokama qiling: 'Men X ilova qurmoqchiman, qanday stack va tuzilma tavsiya qilasiz?'"
+        },
+        {
+          "id": 10,
+          "title": "Asosiy funksiyalarni yaratish (AI pair-programming bilan)",
+          "goal": "Loyihaning CRUD va asosiy funksiyalarini AI juft-dasturlash yordamida tezkor yaratish.",
+          "tasks": [
+            "CRUD (yaratish, o'qish, yangilash, o'chirish) operatsiyalarini amalga oshiring",
+            "AI pair-programming: izohlar yozing, Copilot to'ldirsin, siz tekshiring",
+            "Cursor/Claude Code bilan ko'p fayllarda o'zgartirish qiling: masalan, model o'zgarganda barcha joylarda yangilash",
+            "Har bir funksiyadan keyin testlar yozing (yoki AI'ga test yarattirib, tekshirib oling)",
+            "Agar tashqi API kerak bo'lsa (ob-havo, moliya, OpenAI) — ulang va sinang",
+            "O'rta bosqichda deploy qiling — server muammolarini erta aniqlash uchun",
+            "Git commit xabarlarini yaxshi yozing — har bir o'zgarish aniq bo'lsin"
+          ],
+          "deliverable": "Loyihaning asosiy funksiyalari ishlaydigan holda + o'rta bosqich deploy",
+          "resources": [
+            {"title": "Pytest — Python test framework", "url": "https://docs.pytest.org/", "type": "docs"},
+            {"title": "OpenAI API", "url": "https://platform.openai.com/docs", "type": "docs"}
+          ],
+          "technologies": ["Flask", "SQLAlchemy", "Pytest", "API integratsiya"],
+          "aiUsage": "AI to'liq juft-dasturchi: boilerplate kod yozdiring, lekin har qadamda kodni o'zingiz tushunganingizga ishonch hosil qiling."
+        },
+        {
+          "id": 11,
+          "title": "Testing (sinov), optimallashtirish va UX yaxshilash",
+          "goal": "Kodni sinab tekshirish, tezlikni oshirish va foydalanuvchi tajribasini yaxshilash.",
+          "tasks": [
+            "Barcha muhim funksiyalar uchun testlar yozing: normal holat + xato holatlari (edge cases)",
+            "Ishlash tezligini tekshiring: sekin so'rovlar bormi? Indeks qo'shing, keshdan foydalaning",
+            "Xavfsizlik auditi: AI'dan 'Bu koddagi xavfsizlik muammolarni top' deb so'rang",
+            "Parollarni hash qilish (bcrypt), CSRF himoya, XSS oldini olish",
+            "UI/UX yaxshilash: Bootstrap yoki Tailwind bilan chiroyli responsive dizayn",
+            "Mobil qurilmalarda tekshiring — telefonda ochib ko'ring",
+            "Foydalanuvchi testlari: kimgadir ko'rsatib, muammolarni aniqlang va tuzating",
+            "Accessibility (qulaylik): klaviatura bilan boshqarish, kontrast, ARIA teglar"
+          ],
+          "deliverable": "Testlardan o'tgan, xavfsiz, chiroyli va mobil-do'st ilova",
+          "resources": [
+            {"title": "bcrypt — parol hash", "url": "https://pypi.org/project/bcrypt/", "type": "docs"},
+            {"title": "Tailwind CSS", "url": "https://tailwindcss.com/", "type": "docs"},
+            {"title": "WAVE Accessibility checker", "url": "https://wave.webaim.org/", "type": "tool"}
+          ],
+          "technologies": ["Pytest", "Xavfsizlik", "Tailwind CSS", "Accessibility"],
+          "aiUsage": "AI xavfsizlik auditi + test yaratish + accessibility tekshiruvi uchun ishlatiladi. AI endi to'liq yordamchi."
+        },
+        {
+          "id": 12,
+          "title": "Yakuniy deploy, taqdimot va keyingi qadamlar",
+          "goal": "Ilovani yakuniy deploy qilish, dunyoga taqdim etish va keyingi o'sish yo'nalishlarini belgilash.",
+          "tasks": [
+            "Yakuniy versiyani production'ga deploy qiling: debug rejim o'chiq, sozlamalar to'g'ri",
+            "Production URL'ni to'liq test qiling — hamma narsa ishlayotganini tekshiring",
+            "Masshtablashtirish haqida o'ylang: 1000 foydalanuvchi bo'lsa nima o'zgaradi?",
+            "README va foydalanuvchi qo'llanmasi yozing — AI yordam bera oladi",
+            "Loyihani taqdim eting: jamoaga ko'rsating, LinkedIn post yoki blog yozing",
+            "O'z-o'zingizni baholang: 3 oy oldin va hozir — qanday farq bor?",
+            "Keyingi qadamlar: React/Vue o'rganish, Django bilan tanishish, Docker/CI-CD, Open source'ga hissa qo'shish",
+            "Doimiy mashq qiling — haftada kamida 2-3 soat kod yozing"
+          ],
+          "deliverable": "Internetda ishlaydigan to'liq ilova + GitHub portfeli + taqdimot/blog post",
+          "resources": [
+            {"title": "React rasmiy qo'llanma", "url": "https://react.dev/learn", "type": "docs"},
+            {"title": "Django framework", "url": "https://www.djangoproject.com/start/", "type": "docs"},
+            {"title": "Docker boshlang'ich qo'llanma", "url": "https://docs.docker.com/get-started/", "type": "docs"},
+            {"title": "GitHub Open Source Guide", "url": "https://opensource.guide/", "type": "article"}
+          ],
+          "technologies": ["Deployment", "DevOps", "Portfolio", "Doimiy o'sish"],
+          "aiUsage": "AI to'liq sheriklaringiz: hujjat yozish, kod generatsiya, arxitektura maslahat — lekin siz DOIM qaror qabul qilasiz."
+        }
+      ],
+      "mindmap": "mindmap\n  root((3-Oy: Mahorat))\n    Loyiha rejasi\n      Texnologiya tanlash\n      Arxitektura dizayn\n      DB sxemasi\n    Dasturlash\n      CRUD\n      API integratsiya\n      AI pair-programming\n    Sifat nazorati\n      Testlar (Pytest)\n      Xavfsizlik audit\n      Performance\n    UX/UI\n      Responsive dizayn\n      Accessibility\n      Foydalanuvchi testlari\n    Yakunlash\n      Production deploy\n      Portfolio\n      Keyingi qadamlar"
+    }
+  ],
+  "aiRules": [
+    {
+      "id": 1,
+      "title": "So'ra, nusxa olma",
+      "titleEn": "Ask-Don't-Copy",
+      "icon": "🎓",
+      "description": "AI'dan tayyor kod so'ramang — tushuntirish so'rang. Dastlabki 1-2 oy AI sizga kod yozib bermaydi — siz har bir qatorni o'zingiz yozasiz.",
+      "details": "AI'ga 'Ro'yxatni saralash funksiyasini yoz' demang. Buning o'rniga 'Ro'yxatni saralash uchun qanday algoritm ishlatiladi va u qanday ishlaydi?' deb so'rang. Xato bo'lsa 'Kodimni tuzat' emas, 'Bu xato nimani anglatadi va men uni qanday topishim mumkin?' deb so'rang.",
+      "examples": [
+        {"bad": "ChatGPT, menga login funksiyasini yozib ber", "good": "ChatGPT, login funksiyasi odatda qanday ishlaydi? Qanday qadamlar bo'ladi?"},
+        {"bad": "Bu xatoni tuzatib ber", "good": "TypeError: 'int' object is not iterable — bu xato nimani anglatadi?"},
+        {"bad": "To'liq Flask API yozib ber", "good": "Flask'da REST API yaratishning asosiy qadamlari qanday?"}
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Har qatorni tushun",
+      "titleEn": "Explain-Back Rule",
+      "icon": "🔍",
+      "description": "Agar kodni qator-qator oddiy tilda tushuntirib bera olmasangiz — uni ishlatmang. AI har doim tushuntirish berishi mumkin.",
+      "details": "AI yoki internetdan olingan har bir kod parchasini o'zingizga tushuntirib bering. AI'ga 'Bu kodning har bir qismini tushuntir' deb so'rang. Keyin o'zingiz boshqa birovga tushuntirib bera olasizmi — tekshiring. Agar biror qism 'qora quti' bo'lib qolsa, uni ishlatmang.",
+      "examples": [
+        {"bad": "AI bergan kodni copy-paste qilib, ishladimi deb tekshirish", "good": "AI: Bu kodni qator-qator tushuntir. Keyin o'zim izohlar yozaman."},
+        {"bad": "Copilot taklif qilgan kodni o'ylamasdan qabul qilish", "good": "Copilot taklifi tushunarsiz bo'lsa — QABUL QILMAY, avval tadqiq qilish."},
+        {"bad": "Ishlaydigan kodni tushunmasdan loyihaga qo'shish", "good": "'Agar X o'zgarsa nima bo'ladi? Boshqa yo'l bormi?' deb o'ylab ko'rish"}
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Avval mashq, keyin tekshir",
+      "titleEn": "Practice First, Then Verify",
+      "icon": "💪",
+      "description": "Har bir masalani avval o'zingiz yechishga harakat qiling. 15-20 daqiqa o'ylab ko'ring. Faqat tiqilib qolsangiz — AI'dan maslahat so'rang.",
+      "details": "Masalani ko'rganda darhol AI'ga yugurmang. Avval 15-20 daqiqa o'zingiz harakat qiling. Tiqilsangiz — AI'ga nima qilganingizni aytib, yo'nalish so'rang (javob emas). AI yechim bersa ham — uni o'zingiz qaytadan yozing. Shunchaki copy-paste qilmang.",
+      "examples": [
+        {"bad": "Yangi mavzuni ko'rib, darhol ChatGPT'ga yechim so'rash", "good": "20 daqiqa o'zim harakat qildim. A yondashuvni sinab, X natija oldim. Y kutgandim. Nimada xato?"},
+        {"bad": "AI bergan yechimni copy-paste qilish", "good": "AI bergan yechimni o'qib tushunish va keyin o'zim qaytadan yozish"},
+        {"bad": "'Kod ishlamayapti, tuzat' deyish", "good": "'Men A usulini sinab ko'rdim, B xato chiqdi. C qismda muammo bo'lishi mumkinmi?'"}
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Bosqichma-bosqich chegaralar",
+      "titleEn": "Stage Boundaries",
+      "icon": "📊",
+      "description": "AI'dan foydalanish darajasini asta-sekin oshiring. 1-oy: faqat savol-javob. 2-oy: kod tekshirish. 3-oy: juft-dasturlash.",
+      "details": "1-oy: AI faqat o'qituvchi — tushuntiradi, savollarga javob beradi. Kod yozmaydi. Hatto oddiy sintaksis uchun ham hujjatlarga (docs) qarang.\n2-oy: AI yordamchi — kodni tekshiradi, xatolarni ko'rsatadi. Copilot yoqish mumkin, lekin har taklif tekshiriladi.\n3-oy: AI sherigi — boilerplate kod yozadi, refaktoring qiladi, test yaratadi. Lekin arxitektura qarorlari SIZ qabul qilasiz.",
+      "examples": [
+        {"bad": "1-oyda Copilot yoqib, hamma kodni AI yozdirish", "good": "1-oyda: 'for loop qanday ishlaydi?' — AI tushuntiradi, siz yozasiz"},
+        {"bad": "2-oyda Claude'ga 'to'liq Flask app yoz' deyish", "good": "2-oyda: kodni yozib, AI'ga review so'rash — 'bu yondashuvda muammo bormi?'"},
+        {"bad": "3-oyda AI'ga hamma narsani topshirish", "good": "3-oyda: AI boilerplate yozadi, siz arxitektura va mantiqni boshqarasiz"}
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Qaramlikdan ehtiyot bo'l",
+      "titleEn": "Beware of Dependency Red Flags",
+      "icon": "🚩",
+      "description": "Doimiy o'zingizni tekshiring: AI'siz ham kod yoza olasizmi? Agar yo'q — AI ishlatishni kamaytiring va asoslarga qayting.",
+      "details": "Xavfli belgilar: tushunmagan kodni nusxalayapsizmi? Oddiy narsalar uchun ham AI'ga murojaat qilyapsizmi? AI'siz hech narsa qila olmaysizmi? Agar 'ha' bo'lsa — bir hafta AI'siz kod yozing. Hatto internet'siz mashq qiling. Maqsad: AI sizni KUCHAYTIRADI, ALMASHTIRIB QOYMAYDI.",
+      "examples": [
+        {"bad": "Har safar for loop yozishda AI'ga murojaat qilish", "good": "Haftalik 'offline' mashq: AI va internetsiz 1 soat kod yozish"},
+        {"bad": "AI'siz hech qanday loyiha boshlay olmaslik", "good": "Oddiy loyihani boshdan oxirigacha AI'siz yaratib ko'rish"},
+        {"bad": "Xato chiqsa faqat AI'ga berish, o'zi yechishga urinmaslik", "good": "Xatoni avval o'zim debug qilish, keyin zarur bo'lsa AI bilan tekshirish"}
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "category": "Python",
+      "icon": "🐍",
+      "items": [
+        {"title": "Python rasmiy tutorial", "url": "https://docs.python.org/3/tutorial/", "description": "Python'ning rasmiy boshlang'ich qo'llanmasi"},
+        {"title": "Codecademy: Learn Python 3", "url": "https://www.codecademy.com/learn/learn-python-3", "description": "Interaktiv Python kursi (bepul qism bor)"},
+        {"title": "Think Python (bepul kitob)", "url": "https://greenteapress.com/thinkpython2/", "description": "Bepul onlayn darslik — Python asoslari"},
+        {"title": "Real Python", "url": "https://realpython.com/", "description": "Python bo'yicha chuqur maqolalar va darsliklar"},
+        {"title": "HackerRank Python", "url": "https://www.hackerrank.com/domains/python", "description": "Python masala yechimlari va mashqlar"}
+      ]
+    },
+    {
+      "category": "JavaScript",
+      "icon": "⚡",
+      "items": [
+        {"title": "JavaScript.info", "url": "https://javascript.info/", "description": "Zamonaviy JavaScript to'liq darsligi"},
+        {"title": "MDN JavaScript qo'llanma", "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript", "description": "Mozilla'dan rasmiy JS darslik"},
+        {"title": "freeCodeCamp JS", "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/", "description": "Bepul interaktiv JavaScript kursi"},
+        {"title": "Eloquent JavaScript", "url": "https://eloquentjavascript.net/", "description": "Bepul onlayn kitob — JS chuqur o'rganish"}
+      ]
+    },
+    {
+      "category": "HTML & CSS",
+      "icon": "🎨",
+      "items": [
+        {"title": "MDN HTML asoslari", "url": "https://developer.mozilla.org/en-US/docs/Learn/HTML", "description": "HTML rasmiy boshlang'ich qo'llanma"},
+        {"title": "MDN CSS asoslari", "url": "https://developer.mozilla.org/en-US/docs/Learn/CSS", "description": "CSS rasmiy boshlang'ich qo'llanma"},
+        {"title": "CSS Flexbox qo'llanma", "url": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/", "description": "Flexbox vizual qo'llanma"},
+        {"title": "freeCodeCamp Responsive Design", "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/", "description": "Responsive dizayn kursi (bepul)"}
+      ]
+    },
+    {
+      "category": "Flask va Backend",
+      "icon": "🔧",
+      "items": [
+        {"title": "Flask rasmiy hujjat", "url": "https://flask.palletsprojects.com/", "description": "Flask'ning rasmiy qo'llanmasi"},
+        {"title": "Flask Mega-Tutorial", "url": "https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world", "description": "Flask bo'yicha eng mashhur batafsil darslik"},
+        {"title": "SQLAlchemy tutorial", "url": "https://docs.sqlalchemy.org/en/20/tutorial/", "description": "Python ORM kutubxonasi darsligi"}
+      ]
+    },
+    {
+      "category": "Ma'lumotlar bazasi (Database)",
+      "icon": "🗄️",
+      "items": [
+        {"title": "SQLite Python qo'llanma", "url": "https://docs.python.org/3/library/sqlite3.html", "description": "Python'da SQLite ishlatish"},
+        {"title": "SQLBolt — interaktiv SQL", "url": "https://sqlbolt.com/", "description": "SQL'ni interaktiv o'rganing"},
+        {"title": "PostgreSQL tutorial", "url": "https://www.postgresqltutorial.com/", "description": "PostgreSQL boshlang'ich darsligi"}
+      ]
+    },
+    {
+      "category": "Deployment (Serverga joylash)",
+      "icon": "🚀",
+      "items": [
+        {"title": "Railway", "url": "https://railway.app/", "description": "Oson deploy platforma (bepul boshlash)"},
+        {"title": "Render", "url": "https://render.com/", "description": "Bepul web service hosting"},
+        {"title": "Replit", "url": "https://replit.com/", "description": "Onlayn kod yozish va deploy"},
+        {"title": "Docker Get Started", "url": "https://docs.docker.com/get-started/", "description": "Docker asoslari (konteynerizatsiya)"},
+        {"title": "GitHub Pages", "url": "https://pages.github.com/", "description": "Statik saytlar uchun bepul hosting"}
+      ]
+    },
+    {
+      "category": "AI vositalar",
+      "icon": "🤖",
+      "items": [
+        {"title": "ChatGPT", "url": "https://chat.openai.com/", "description": "OpenAI chatbot — savol-javob va tushuntirish uchun"},
+        {"title": "Claude", "url": "https://claude.ai/", "description": "Anthropic chatbot — katta kontekst, chuqur tushuntirish"},
+        {"title": "GitHub Copilot", "url": "https://github.com/features/copilot", "description": "AI kod avtoto'ldirish (VS Code ichida)"},
+        {"title": "Cursor", "url": "https://cursor.com/", "description": "AI bilan birlashtirilgan kod muharriri"},
+        {"title": "Replit AI", "url": "https://replit.com/ai", "description": "Replit'ning AI yordamchisi (Ghostwriter)"}
+      ]
+    }
+  ]
+}
