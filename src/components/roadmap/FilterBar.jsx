@@ -10,7 +10,7 @@ export default function FilterBar({
   resetProgress
 }) {
   return (
-    <div className="space-y-4 mb-8">
+    <div className="sticky top-16 z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 py-4 bg-white/80 dark:bg-surface-950/80 backdrop-blur-xl border-b border-surface-200/40 dark:border-surface-800/40 mb-8">
       <div className="flex flex-col sm:flex-row gap-3">
         <div className="flex-1">
           <SearchInput
@@ -23,7 +23,7 @@ export default function FilterBar({
           <select
             value={monthFilter}
             onChange={e => setMonthFilter(e.target.value)}
-            className="px-3 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
+            className="px-3 py-2.5 rounded-xl border border-surface-200 dark:border-surface-700 bg-white dark:bg-surface-900 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-400 transition-all"
             aria-label="Oy bo'yicha filter"
           >
             <option value="all">Barcha oylar</option>
@@ -34,7 +34,7 @@ export default function FilterBar({
           <select
             value={techFilter}
             onChange={e => setTechFilter(e.target.value)}
-            className="px-3 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
+            className="px-3 py-2.5 rounded-xl border border-surface-200 dark:border-surface-700 bg-white dark:bg-surface-900 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-400 transition-all"
             aria-label="Texnologiya bo'yicha filter"
           >
             <option value="all">Barcha texnologiyalar</option>
@@ -45,25 +45,25 @@ export default function FilterBar({
         </div>
       </div>
 
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between mt-3">
         <div className="flex items-center gap-4">
           {totalProgress > 0 && (
-            <div className="flex items-center gap-2">
-              <div className="w-32 h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
+            <div className="flex items-center gap-2.5">
+              <div className="w-32 h-1.5 bg-surface-100 dark:bg-surface-800 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full transition-all duration-500"
+                  className="h-full bg-gradient-to-r from-primary-600 to-primary-400 rounded-full transition-all duration-500"
                   style={{ width: `${totalProgress}%` }}
                 />
               </div>
-              <span className="text-xs font-medium text-gray-500">{totalProgress}%</span>
+              <span className="text-xs font-medium text-surface-500">{totalProgress}%</span>
             </div>
           )}
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-3">
           {hasFilters && (
             <button
               onClick={reset}
-              className="text-xs text-primary-600 dark:text-primary-400 hover:underline"
+              className="text-xs text-primary-600 dark:text-primary-400 hover:underline font-medium"
             >
               Filterni tozalash
             </button>
@@ -71,7 +71,7 @@ export default function FilterBar({
           {totalProgress > 0 && (
             <button
               onClick={resetProgress}
-              className="text-xs text-gray-400 hover:text-red-500 transition-colors"
+              className="text-xs text-surface-400 hover:text-red-500 transition-colors"
             >
               Progressni tozalash
             </button>

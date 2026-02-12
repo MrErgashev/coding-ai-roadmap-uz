@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import ThemeToggle from '../shared/ThemeToggle'
 
@@ -10,14 +11,31 @@ const navLinks = [
 
 export default function Header({ dark, toggleTheme }) {
   const { pathname } = useLocation()
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const menuRef = useRef(null)
+
+  useEffect(() => {
+    setMobileOpen(false)
+  }, [pathname])
+
+  useEffect(() => {
+    if (!mobileOpen) return
+    const handler = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setMobileOpen(false)
+      }
+    }
+    document.addEventListener('pointerdown', handler)
+    return () => document.removeEventListener('pointerdown', handler)
+  }, [mobileOpen])
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-gray-950/80 border-b border-gray-200/50 dark:border-gray-800/50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-surface-950/80 border-b border-surface-200/60 dark:border-surface-800/60">
+      <div className="max-w-[1140px] mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 font-bold text-lg">
-            <span className="text-2xl">🚀</span>
-            <span className="hidden sm:inline bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">
+          <Link to="/" className="flex items-center gap-2.5 font-bold text-[15px] tracking-tight">
+            <span className="text-xl">🚀</span>
+            <span className="hidden sm:inline text-surface-900 dark:text-surface-100">
               Coding + AI
             </span>
           </Link>
@@ -27,10 +45,10 @@ export default function Header({ dark, toggleTheme }) {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-3.5 py-2 rounded-lg text-[13px] font-medium transition-colors ${
                   pathname === link.to
                     ? 'bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-800'
+                    : 'text-surface-500 hover:text-surface-900 hover:bg-surface-100 dark:text-surface-400 dark:hover:text-surface-100 dark:hover:bg-surface-800'
                 }`}
               >
                 {link.label}
@@ -38,42 +56,46 @@ export default function Header({ dark, toggleTheme }) {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5">
             <ThemeToggle dark={dark} toggle={toggleTheme} />
-            <MobileMenu links={navLinks} pathname={pathname} />
+            <div className="md:hidden" ref={menuRef}>
+              <button
+                onClick={() => setMobileOpen(!mobileOpen)}
+                aria-label="Menyu"
+                aria-expanded={mobileOpen}
+                className="p-2 rounded-lg hover:bg-surface-100 dark:hover:bg-surface-800 transition-colors focus-ring"
+              >
+                {mobileOpen ? (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                ) : (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                )}
+              </button>
+              {mobileOpen && (
+                <div className="absolute right-4 top-full mt-2 w-52 py-2 bg-white dark:bg-surface-900 rounded-xl shadow-lg shadow-surface-900/8 border border-surface-200 dark:border-surface-700 animate-in fade-in slide-in-from-top-2">
+                  {navLinks.map(link => (
+                    <Link
+                      key={link.to}
+                      to={link.to}
+                      className={`block px-4 py-2.5 text-sm transition-colors ${
+                        pathname === link.to
+                          ? 'text-primary-600 bg-primary-50 dark:bg-primary-900/20 dark:text-primary-400'
+                          : 'text-surface-600 hover:bg-surface-50 dark:text-surface-300 dark:hover:bg-surface-800'
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
     </header>
-  )
-}
-
-function MobileMenu({ links, pathname }) {
-  return (
-    <div className="md:hidden group relative">
-      <button
-        aria-label="Menyu"
-        className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
-      >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-      <div className="absolute right-0 top-full mt-2 w-48 py-2 bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-focus-within:opacity-100 group-focus-within:visible transition-all">
-        {links.map(link => (
-          <Link
-            key={link.to}
-            to={link.to}
-            className={`block px-4 py-2.5 text-sm ${
-              pathname === link.to
-                ? 'text-primary-600 bg-primary-50 dark:bg-primary-900/20 dark:text-primary-400'
-                : 'text-gray-700 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-800'
-            }`}
-          >
-            {link.label}
-          </Link>
-        ))}
-      </div>
-    </div>
   )
 }

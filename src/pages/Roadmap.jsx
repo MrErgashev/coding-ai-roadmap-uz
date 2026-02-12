@@ -11,10 +11,10 @@ export default function Roadmap({
   resetProgress
 }) {
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+    <div className="max-w-[860px] mx-auto px-4 sm:px-6 py-10">
       <div className="mb-8">
         <h1 className="text-3xl sm:text-4xl font-bold mb-2">Yo'l xaritasi</h1>
-        <p className="text-gray-500 dark:text-gray-400">
+        <p className="text-surface-500 dark:text-surface-400">
           12 hafta &middot; 3 oy &middot; Bosqichma-bosqich dasturlashni o'rganing
         </p>
       </div>
@@ -26,11 +26,11 @@ export default function Roadmap({
       />
 
       {searchProps.filtered.length === 0 ? (
-        <div className="text-center py-16">
-          <p className="text-gray-400 text-lg mb-2">Hech narsa topilmadi</p>
+        <div className="text-center py-20">
+          <p className="text-surface-400 text-lg mb-2">Hech narsa topilmadi</p>
           <button
             onClick={searchProps.reset}
-            className="text-sm text-primary-600 dark:text-primary-400 hover:underline"
+            className="text-sm text-primary-600 dark:text-primary-400 hover:underline font-medium"
           >
             Filterni tozalash
           </button>
