@@ -31,7 +31,7 @@ Bu loyiha inglizcha "Master Coding Foundations and Leverage AI: 3-Month Roadmap"
 
 ```bash
 # Reponi klonlash
-git clone https://github.com/YOUR_USERNAME/coding-ai-roadmap-uz.git
+git clone https://github.com/MrErgashev/coding-ai-roadmap-uz.git
 cd coding-ai-roadmap-uz
 
 # Paketlarni o'rnatish
