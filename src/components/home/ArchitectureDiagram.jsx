@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { LuMonitor, LuSettings, LuDatabase } from 'react-icons/lu'
 
 function AnimatedArrow({ label1, label2, colorFrom, colorTo }) {
   return (
@@ -52,7 +53,7 @@ function DiagramNode({ icon, title, subtitle, tags, gradient, glowColor, delay }
       <div className="relative">
         {/* 3D icon */}
         <div className={`icon-3d ${gradient} mx-auto mb-4`}>
-          <span>{icon}</span>
+          {icon}
         </div>
 
         <h3 className="font-bold text-base mb-1">{title}</h3>
@@ -98,7 +99,7 @@ export default function ArchitectureDiagram() {
             {/* Client */}
             <div className="md:col-span-2">
               <DiagramNode
-                icon="🖥️"
+                icon={<LuMonitor size={28} />}
                 title="Client (Brauzer)"
                 subtitle="HTML, CSS, JavaScript"
                 tags={['DOM', 'Fetch API', 'UI']}
@@ -122,7 +123,7 @@ export default function ArchitectureDiagram() {
             {/* Server */}
             <div className="md:col-span-2">
               <DiagramNode
-                icon="⚙️"
+                icon={<LuSettings size={28} />}
                 title="Server (Backend)"
                 subtitle="Python, Flask"
                 tags={['Routes', 'API', 'Logic']}
@@ -146,7 +147,7 @@ export default function ArchitectureDiagram() {
             {/* Database */}
             <div className="md:col-span-2">
               <DiagramNode
-                icon="🗄️"
+                icon={<LuDatabase size={28} />}
                 title="Database (Baza)"
                 subtitle="SQLite, PostgreSQL"
                 tags={['Tables', 'CRUD', 'SQL']}

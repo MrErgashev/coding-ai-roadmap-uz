@@ -378,6 +378,10 @@ html.dark .mindmap-branch:hover {
               0 4px 16px -4px rgba(0, 0, 0, 0.04);
 }
 
+.icon-3d svg {
+  display: block;
+}
+
 .icon-3d-sm {
   width: 40px;
   height: 40px;

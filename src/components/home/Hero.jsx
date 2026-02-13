@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useRef } from 'react'
+import { SiPython, SiJavascript, SiFlask } from 'react-icons/si'
+import { LuDatabase, LuBot, LuRocket } from 'react-icons/lu'
 
 export default function Hero({ totalProgress }) {
   const heroRef = useRef(null)
@@ -87,7 +89,7 @@ export default function Hero({ totalProgress }) {
               className="group relative inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl bg-gradient-to-r from-primary-600 to-primary-500 text-white font-semibold text-lg shadow-[0_8px_32px_-4px_rgba(37,99,235,0.5)] transition-all duration-300 hover:shadow-[0_12px_40px_-4px_rgba(37,99,235,0.6)] hover:-translate-y-1 overflow-hidden"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-primary-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <span className="relative">Roadmap'ni boshlash</span>
+              <span className="relative">Roadmap'ni ko'rish</span>
               <svg className="relative w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
@@ -122,18 +124,18 @@ export default function Hero({ totalProgress }) {
           {/* Tech stack badges */}
           <div className="animate-fade-up delay-500 mt-16 flex flex-wrap justify-center gap-3">
             {[
-              { name: 'Python', color: 'from-yellow-400 to-yellow-600', icon: '🐍' },
-              { name: 'JavaScript', color: 'from-yellow-300 to-amber-500', icon: '⚡' },
-              { name: 'Flask', color: 'from-gray-600 to-gray-800', icon: '🧪' },
-              { name: 'SQL', color: 'from-blue-400 to-blue-600', icon: '🗄️' },
-              { name: 'AI Tools', color: 'from-purple-400 to-purple-600', icon: '🤖' },
-              { name: 'Deploy', color: 'from-emerald-400 to-emerald-600', icon: '🚀' },
+              { name: 'Python', iconColor: '#3776AB', icon: <SiPython size={16} /> },
+              { name: 'JavaScript', iconColor: '#F7DF1E', icon: <SiJavascript size={16} /> },
+              { name: 'Flask', iconColor: '#44a348', icon: <SiFlask size={16} /> },
+              { name: 'SQL', iconColor: '#3b82f6', icon: <LuDatabase size={16} /> },
+              { name: 'AI Tools', iconColor: '#a855f7', icon: <LuBot size={16} /> },
+              { name: 'Deploy', iconColor: '#f97316', icon: <LuRocket size={16} /> },
             ].map((tech) => (
               <div
                 key={tech.name}
                 className="group flex items-center gap-2 px-4 py-2 rounded-xl glass-card text-sm font-medium text-surface-600 dark:text-surface-300 hover:scale-105 transition-all duration-300 cursor-default"
               >
-                <span className="text-base">{tech.icon}</span>
+                <span className="flex items-center" style={{ color: tech.iconColor }}>{tech.icon}</span>
                 {tech.name}
               </div>
             ))}

@@ -3,6 +3,8 @@ import MonthCard from '../components/home/MonthCard'
 import Timeline from '../components/home/Timeline'
 import ArchitectureDiagram from '../components/home/ArchitectureDiagram'
 import { useEffect, useRef, useState } from 'react'
+import { SiPython } from 'react-icons/si'
+import { LuCalendarDays, LuCircleCheck, LuZap, LuRocket, LuGlobe, LuSettings, LuDatabase, LuBot } from 'react-icons/lu'
 
 function useReveal() {
   const ref = useRef(null)
@@ -21,10 +23,10 @@ function useReveal() {
 function StatsSection() {
   const [ref, visible] = useReveal()
   const stats = [
-    { value: '12', label: 'Hafta', icon: '📅', color: 'from-blue-500 to-cyan-500' },
-    { value: '50+', label: 'Topshiriq', icon: '✅', color: 'from-purple-500 to-pink-500' },
-    { value: '6', label: 'Texnologiya', icon: '⚡', color: 'from-orange-500 to-red-500' },
-    { value: '1', label: "To'liq loyiha", icon: '🚀', color: 'from-emerald-500 to-teal-500' },
+    { value: '12', label: 'Hafta', icon: <LuCalendarDays size={24} />, color: 'from-blue-500 to-cyan-500' },
+    { value: '50+', label: 'Topshiriq', icon: <LuCircleCheck size={24} />, color: 'from-purple-500 to-pink-500' },
+    { value: '6', label: 'Texnologiya', icon: <LuZap size={24} />, color: 'from-orange-500 to-red-500' },
+    { value: '1', label: "To'liq loyiha", icon: <LuRocket size={24} />, color: 'from-emerald-500 to-teal-500' },
   ]
 
   return (
@@ -38,7 +40,7 @@ function StatsSection() {
               className="relative p-6 rounded-3xl glass-card group premium-card text-center"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center text-2xl mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center text-white mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                 {stat.icon}
               </div>
               <div className="text-3xl sm:text-4xl font-extrabold mb-1 gradient-text">{stat.value}</div>
@@ -55,37 +57,37 @@ function FeaturesSection() {
   const [ref, visible] = useReveal()
   const features = [
     {
-      icon: '🐍',
+      icon: <SiPython size={28} />,
       title: "Noldan Python",
       desc: "Dasturlash asoslarini Python tilida o'rganing — o'zgaruvchilar, funksiyalar, OOP",
       iconClass: 'icon-3d icon-3d-blue',
     },
     {
-      icon: '🌐',
+      icon: <LuGlobe size={28} />,
       title: 'Web Development',
       desc: "HTML, CSS, JavaScript — interaktiv veb-sahifalar yaratish",
       iconClass: 'icon-3d icon-3d-cyan',
     },
     {
-      icon: '⚙️',
+      icon: <LuSettings size={28} />,
       title: 'Backend (Flask)',
       desc: "Python Flask bilan API va server tomonni yarating",
       iconClass: 'icon-3d icon-3d-purple',
     },
     {
-      icon: '🗄️',
+      icon: <LuDatabase size={28} />,
       title: "Database & SQL",
       desc: "Ma'lumotlar bazasi bilan ishlash — SQLite, CRUD operatsiyalari",
       iconClass: 'icon-3d icon-3d-emerald',
     },
     {
-      icon: '🤖',
+      icon: <LuBot size={28} />,
       title: "AI Tools",
       desc: "ChatGPT, Copilot va boshqa AI vositalaridan to'g'ri foydalanish",
       iconClass: 'icon-3d icon-3d-pink',
     },
     {
-      icon: '🚀',
+      icon: <LuRocket size={28} />,
       title: 'Deploy',
       desc: "Loyihangizni internetga chiqaring — hosting, domain, CI/CD",
       iconClass: 'icon-3d icon-3d-orange',
@@ -124,7 +126,7 @@ function FeaturesSection() {
 
               <div className="relative">
                 <div className={feat.iconClass + ' mb-5'}>
-                  <span>{feat.icon}</span>
+                  {feat.icon}
                 </div>
                 <h3 className="font-bold text-lg mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                   {feat.title}
@@ -207,7 +209,7 @@ export default function Home({ months, totalProgress, getWeekProgress }) {
         <div className="relative max-w-[700px] mx-auto px-5 sm:px-8 text-center">
           <div className="glass-card rounded-3xl p-10 sm:p-14">
             <div className="icon-3d icon-3d-blue w-16 h-16 flex items-center justify-center mx-auto mb-8">
-              <span className="text-2xl">🚀</span>
+              <LuRocket size={24} />
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">
               Hoziroq boshlang
@@ -219,7 +221,7 @@ export default function Home({ months, totalProgress, getWeekProgress }) {
               href="#/roadmap"
               className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-primary-600 to-primary-500 text-white font-semibold text-lg shadow-[0_8px_32px_-4px_rgba(37,99,235,0.5)] transition-all duration-300 hover:shadow-[0_12px_40px_-4px_rgba(37,99,235,0.6)] hover:-translate-y-1"
             >
-              Roadmap'ni boshlash
+              Roadmap'ni ko'rish
               <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useRef, useState } from 'react'
+import MappedIcon from '../shared/IconMap'
 
 const monthStyles = {
   1: { gradient: 'from-blue-500 to-cyan-400', glow: 'rgba(59,130,246,0.15)', iconClass: 'icon-3d icon-3d-blue' },
@@ -43,7 +44,7 @@ export default function MonthCard({ month, progress }) {
       <div className="relative">
         <div className="flex items-start justify-between mb-6">
           <div className={style.iconClass}>
-            <span>{month.icon}</span>
+            <MappedIcon name={month.icon} size={28} />
           </div>
           <span className={`px-3 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r ${style.gradient} text-white shadow-lg`}>
             {month.id}-oy

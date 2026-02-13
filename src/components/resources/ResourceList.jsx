@@ -1,3 +1,5 @@
+import MappedIcon from '../shared/IconMap'
+
 export default function ResourceList({ resources }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -7,8 +9,8 @@ export default function ResourceList({ resources }) {
           className="p-6 sm:p-7 rounded-2xl border border-surface-200/80 dark:border-surface-800/80 bg-white dark:bg-surface-900/30 shadow-sm shadow-surface-900/[0.02] hover:shadow-md hover:shadow-surface-900/[0.06] dark:hover:shadow-surface-950/20 transition-all duration-200"
         >
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-10 h-10 rounded-xl bg-surface-100 dark:bg-surface-800/80 flex items-center justify-center text-xl">
-              {cat.icon}
+            <div className="w-10 h-10 rounded-xl bg-surface-100 dark:bg-surface-800/80 flex items-center justify-center text-surface-600 dark:text-surface-300">
+              <MappedIcon name={cat.icon} size={20} />
             </div>
             <h3 className="font-bold text-lg tracking-tight">{cat.category}</h3>
           </div>

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import MappedIcon from '../shared/IconMap'
 
 function WeekItem({ week, prog, index }) {
   const ref = useRef(null)
@@ -89,8 +90,8 @@ export default function Timeline({ months, getWeekProgress }) {
               <div key={month.id} className="space-y-3">
                 {/* Month header */}
                 <div className="flex items-center gap-3 mb-5 pb-4 border-b border-surface-200/60 dark:border-surface-800/60">
-                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${colors.accent} flex items-center justify-center text-white text-lg shadow-lg`}>
-                    {month.icon}
+                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${colors.accent} flex items-center justify-center text-white shadow-lg`}>
+                    <MappedIcon name={month.icon} size={18} />
                   </div>
                   <div>
                     <h3 className="font-bold text-base">{month.id}-oy</h3>

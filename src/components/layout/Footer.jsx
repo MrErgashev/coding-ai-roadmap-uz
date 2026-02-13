@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import { SiPython, SiJavascript } from 'react-icons/si'
+import { LuDatabase, LuRocket } from 'react-icons/lu'
 
 export default function Footer() {
   return (
@@ -54,13 +56,13 @@ export default function Footer() {
             <h3 className="font-bold text-sm text-surface-900 dark:text-white mb-4">Texnologiyalar</h3>
             <div className="flex flex-col gap-3">
               {[
-                { name: 'Python & Flask', icon: '🐍' },
-                { name: 'JavaScript & HTML/CSS', icon: '⚡' },
-                { name: 'SQLite & SQL', icon: '🗄️' },
-                { name: 'Deployment & DevOps', icon: '🚀' },
+                { name: 'Python & Flask', icon: <SiPython size={14} /> },
+                { name: 'JavaScript & HTML/CSS', icon: <SiJavascript size={14} /> },
+                { name: 'SQLite & SQL', icon: <LuDatabase size={14} /> },
+                { name: 'Deployment & DevOps', icon: <LuRocket size={14} /> },
               ].map(tech => (
                 <span key={tech.name} className="flex items-center gap-2 text-sm text-surface-500 dark:text-surface-400">
-                  <span className="text-xs">{tech.icon}</span>
+                  <span className="text-surface-400 dark:text-surface-500">{tech.icon}</span>
                   {tech.name}
                 </span>
               ))}

@@ -360,7 +360,7 @@
       "id": 3,
       "title": "Avval mashq, keyin tekshir",
       "titleEn": "Practice First, Then Verify",
-      "icon": "💪",
+      "icon": "dumbbell",
       "description": "Har bir masalani avval o'zingiz yechishga harakat qiling. 15-20 daqiqa o'ylab ko'ring. Faqat tiqilib qolsangiz — AI'dan maslahat so'rang.",
       "details": "Masalani ko'rganda darhol AI'ga yugurmang. Avval 15-20 daqiqa o'zingiz harakat qiling. Tiqilsangiz — AI'ga nima qilganingizni aytib, yo'nalish so'rang (javob emas). AI yechim bersa ham — uni o'zingiz qaytadan yozing. Shunchaki copy-paste qilmang.",
       "examples": [
@@ -373,7 +373,7 @@
       "id": 4,
       "title": "Bosqichma-bosqich chegaralar",
       "titleEn": "Stage Boundaries",
-      "icon": "📊",
+      "icon": "bar-chart",
       "description": "AI'dan foydalanish darajasini asta-sekin oshiring. 1-oy: faqat savol-javob. 2-oy: kod tekshirish. 3-oy: juft-dasturlash.",
       "details": "1-oy: AI faqat o'qituvchi — tushuntiradi, savollarga javob beradi. Kod yozmaydi. Hatto oddiy sintaksis uchun ham hujjatlarga (docs) qarang.\n2-oy: AI yordamchi — kodni tekshiradi, xatolarni ko'rsatadi. Copilot yoqish mumkin, lekin har taklif tekshiriladi.\n3-oy: AI sherigi — boilerplate kod yozadi, refaktoring qiladi, test yaratadi. Lekin arxitektura qarorlari SIZ qabul qilasiz.",
       "examples": [
@@ -386,7 +386,7 @@
       "id": 5,
       "title": "Qaramlikdan ehtiyot bo'l",
       "titleEn": "Beware of Dependency Red Flags",
-      "icon": "🚩",
+      "icon": "alert",
       "description": "Doimiy o'zingizni tekshiring: AI'siz ham kod yoza olasizmi? Agar yo'q — AI ishlatishni kamaytiring va asoslarga qayting.",
       "details": "Xavfli belgilar: tushunmagan kodni nusxalayapsizmi? Oddiy narsalar uchun ham AI'ga murojaat qilyapsizmi? AI'siz hech narsa qila olmaysizmi? Agar 'ha' bo'lsa — bir hafta AI'siz kod yozing. Hatto internet'siz mashq qiling. Maqsad: AI sizni KUCHAYTIRADI, ALMASHTIRIB QOYMAYDI.",
       "examples": [
@@ -399,7 +399,7 @@
   "resources": [
     {
       "category": "Python",
-      "icon": "🐍",
+      "icon": "python",
       "items": [
         {"title": "Python rasmiy tutorial", "url": "https://docs.python.org/3/tutorial/", "description": "Python'ning rasmiy boshlang'ich qo'llanmasi"},
         {"title": "Codecademy: Learn Python 3", "url": "https://www.codecademy.com/learn/learn-python-3", "description": "Interaktiv Python kursi (bepul qism bor)"},
@@ -410,7 +410,7 @@
     },
     {
       "category": "JavaScript",
-      "icon": "⚡",
+      "icon": "javascript",
       "items": [
         {"title": "JavaScript.info", "url": "https://javascript.info/", "description": "Zamonaviy JavaScript to'liq darsligi"},
         {"title": "MDN JavaScript qo'llanma", "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript", "description": "Mozilla'dan rasmiy JS darslik"},
@@ -420,7 +420,7 @@
     },
     {
       "category": "HTML & CSS",
-      "icon": "🎨",
+      "icon": "palette",
       "items": [
         {"title": "MDN HTML asoslari", "url": "https://developer.mozilla.org/en-US/docs/Learn/HTML", "description": "HTML rasmiy boshlang'ich qo'llanma"},
         {"title": "MDN CSS asoslari", "url": "https://developer.mozilla.org/en-US/docs/Learn/CSS", "description": "CSS rasmiy boshlang'ich qo'llanma"},
@@ -430,7 +430,7 @@
     },
     {
       "category": "Flask va Backend",
-      "icon": "🔧",
+      "icon": "flask",
       "items": [
         {"title": "Flask rasmiy hujjat", "url": "https://flask.palletsprojects.com/", "description": "Flask'ning rasmiy qo'llanmasi"},
         {"title": "Flask Mega-Tutorial", "url": "https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world", "description": "Flask bo'yicha eng mashhur batafsil darslik"},
@@ -439,7 +439,7 @@
     },
     {
       "category": "Ma'lumotlar bazasi (Database)",
-      "icon": "🗄️",
+      "icon": "database",
       "items": [
         {"title": "SQLite Python qo'llanma", "url": "https://docs.python.org/3/library/sqlite3.html", "description": "Python'da SQLite ishlatish"},
         {"title": "SQLBolt — interaktiv SQL", "url": "https://sqlbolt.com/", "description": "SQL'ni interaktiv o'rganing"},
@@ -448,7 +448,7 @@
     },
     {
       "category": "Deployment (Serverga joylash)",
-      "icon": "🚀",
+      "icon": "rocket",
       "items": [
         {"title": "Railway", "url": "https://railway.app/", "description": "Oson deploy platforma (bepul boshlash)"},
         {"title": "Render", "url": "https://render.com/", "description": "Bepul web service hosting"},
@@ -459,7 +459,7 @@
     },
     {
       "category": "AI vositalar",
-      "icon": "🤖",
+      "icon": "robot",
       "items": [
         {"title": "ChatGPT", "url": "https://chat.openai.com/", "description": "OpenAI chatbot — savol-javob va tushuntirish uchun"},
         {"title": "Claude", "url": "https://claude.ai/", "description": "Anthropic chatbot — katta kontekst, chuqur tushuntirish"},

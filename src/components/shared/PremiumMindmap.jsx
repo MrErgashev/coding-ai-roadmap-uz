@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import MappedIcon from './IconMap'
 
 const colorThemes = {
   blue: {
@@ -63,7 +64,7 @@ function BranchCard({ branch, theme, delay }) {
         {/* Icon + Label */}
         <div className="flex items-center gap-3 mb-3">
           <div className={`icon-3d icon-3d-sm ${theme.iconClass}`}>
-            <span>{branch.icon}</span>
+            <MappedIcon name={branch.icon} size={18} />
           </div>
           <h4 className="font-semibold text-sm tracking-tight">{branch.label}</h4>
         </div>

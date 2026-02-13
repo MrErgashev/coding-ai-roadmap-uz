@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import MappedIcon from '../shared/IconMap'
 
 export default function RuleCard({ rule }) {
   const [open, setOpen] = useState(false)
@@ -7,8 +8,8 @@ export default function RuleCard({ rule }) {
     <div className="rounded-2xl border border-surface-200/80 dark:border-surface-800/80 overflow-hidden bg-white dark:bg-surface-900/30 shadow-sm shadow-surface-900/[0.02] hover:shadow-md hover:shadow-surface-900/[0.06] dark:hover:shadow-surface-950/20 transition-all duration-200">
       <div className="p-6 sm:p-7">
         <div className="flex items-start gap-4 mb-4">
-          <div className="w-12 h-12 rounded-xl bg-primary-50 dark:bg-primary-950/30 border border-primary-100/80 dark:border-primary-900/30 flex items-center justify-center text-2xl shrink-0">
-            {rule.icon}
+          <div className="w-12 h-12 rounded-xl bg-primary-50 dark:bg-primary-950/30 border border-primary-100/80 dark:border-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 shrink-0">
+            <MappedIcon name={rule.icon} size={24} />
           </div>
           <div>
             <h3 className="font-bold text-lg tracking-tight">{rule.title}</h3>

@@ -1,5 +1,6 @@
 import WeekAccordion from './WeekAccordion'
 import PremiumMindmap from '../shared/PremiumMindmap'
+import MappedIcon from '../shared/IconMap'
 
 const colorMap = {
   blue: {
@@ -23,7 +24,7 @@ export default function MonthSection({ month, isChecked, toggleTask, getWeekProg
     <section className="mb-16" aria-label={`${month.id}-oy`}>
       <div className={`border-l-[3px] ${colors.border} pl-5 mb-8`}>
         <div className="flex items-center gap-3 mb-1.5">
-          <span className="text-2xl">{month.icon}</span>
+          <MappedIcon name={month.icon} size={24} />
           <h2 className="text-xl sm:text-2xl font-bold tracking-tight">{month.id}-oy: {month.title}</h2>
         </div>
         <p className="text-sm text-surface-500 dark:text-surface-400">{month.subtitle}</p>
