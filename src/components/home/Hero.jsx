@@ -70,7 +70,7 @@ export default function Hero({ totalProgress }) {
               Dasturlashni o'rganing,
             </span>
             <span className="gradient-text block mt-2">
-              AI bilan kuchlaning
+              AI bilan yuksaling
             </span>
           </h1>
 
