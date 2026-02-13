@@ -1,9 +1,9 @@
 import { SiPython, SiJavascript, SiFlask } from 'react-icons/si'
 import {
   LuDatabase, LuBot, LuRocket, LuGlobe, LuSettings, LuMonitor,
-  LuCalendarDays, LuCheckCircle, LuZap, LuWrench, LuBookOpen,
+  LuCalendarDays, LuCircleCheck, LuZap, LuWrench, LuBookOpen,
   LuBlocks, LuClipboardList, LuLaptop, LuPalette, LuFlag,
-  LuGraduationCap, LuSearch, LuDumbbell, LuBarChart3, LuTrophy,
+  LuGraduationCap, LuSearch, LuDumbbell, LuChartBar, LuTrophy,
   LuTriangleAlert,
 } from 'react-icons/lu'
 
@@ -20,7 +20,7 @@ const iconMap = {
   'settings': LuSettings,
   'monitor': LuMonitor,
   'calendar': LuCalendarDays,
-  'check-circle': LuCheckCircle,
+  'check-circle': LuCircleCheck,
   'zap': LuZap,
   'wrench': LuWrench,
   'book-open': LuBookOpen,
@@ -32,7 +32,7 @@ const iconMap = {
   'graduation': LuGraduationCap,
   'search': LuSearch,
   'dumbbell': LuDumbbell,
-  'bar-chart': LuBarChart3,
+  'bar-chart': LuChartBar,
   'trophy': LuTrophy,
   'alert': LuTriangleAlert,
 }
