@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Python asoslari va dasturlash poydevori",
       "subtitle": "Dasturlash tafakkurini shakllantirish",
-      "icon": "🐍",
+      "icon": "python",
       "color": "blue",
       "description": "Birinchi oyda siz Python dasturlash tilini noldan o'rganasiz. O'zgaruvchilar, sikllar, funksiyalar, ma'lumotlar tuzilmasi — bularning barchasini amaliy mashqlar orqali o'zlashtirasiz. AI faqat tushuntirish va savolga javob berish uchun ishlatiladi.",
       "weeks": [
@@ -97,13 +97,22 @@
           "aiUsage": "AI'dan viktorina (quiz) so'rang. HTML/CSS savollar yuboring. Flask tushunmagan joylarni so'rang."
         }
       ],
-      "mindmap": "mindmap\n  root((1-Oy: Python Asoslari))\n    Muhit sozlash\n      Python o'rnatish\n      VS Code / Replit\n      GitHub akkaunt\n    Asosiy tushunchalar\n      O'zgaruvchilar\n      Sikllar va shartlar\n      Funksiyalar\n      Ma'lumot turlari\n    Ma'lumotlar tuzilmasi\n      List va Dict\n      Modullar\n      Algoritmlar\n    OOP\n      Sinflar\n      Obyektlar\n      Xatolarni boshqarish\n    Veb kirish\n      HTML / CSS\n      Flask asoslari"
+      "mindmapData": {
+        "center": "1-Oy: Python Asoslari",
+        "branches": [
+          { "label": "Muhit sozlash", "icon": "wrench", "items": ["Python o'rnatish", "VS Code / Replit", "GitHub akkaunt"] },
+          { "label": "Asosiy tushunchalar", "icon": "book-open", "items": ["O'zgaruvchilar", "Sikllar va shartlar", "Funksiyalar", "Ma'lumot turlari"] },
+          { "label": "Ma'lumotlar tuzilmasi", "icon": "database", "items": ["List va Dict", "Modullar", "Algoritmlar"] },
+          { "label": "OOP", "icon": "blocks", "items": ["Sinflar", "Obyektlar", "Xatolarni boshqarish"] },
+          { "label": "Veb kirish", "icon": "globe", "items": ["HTML / CSS", "Flask asoslari"] }
+        ]
+      }
     },
     {
       "id": 2,
       "title": "Veb dasturlash — Frontend va Backend",
       "subtitle": "To'liq veb-ilova yaratish",
-      "icon": "🌐",
+      "icon": "globe",
       "color": "purple",
       "description": "Ikkinchi oyda siz to'liq veb-ilova yaratishni o'rganasiz: HTML/CSS/JavaScript bilan foydalanuvchi interfeysi, Flask bilan server, va SQLite bilan ma'lumotlar bazasi. AI yordamchiga aylanadi — avtoto'ldirish va kod tekshirish uchun.",
       "weeks": [
@@ -198,13 +207,22 @@
           "aiUsage": "AI'dan deployment qadamlarini so'rang: 'Flask ilovani Railway'ga qanday deploy qilaman?' Xavfsizlik maslahatlarini ham oling."
         }
       ],
-      "mindmap": "mindmap\n  root((2-Oy: Veb Dasturlash))\n    Frontend\n      HTML semantik teglar\n      CSS Flexbox\n      JavaScript DOM\n      Interaktiv sahifalar\n    Backend\n      Flask framework\n      Marshrutlar va API\n      Jinja2 shablonlar\n    Ma'lumotlar bazasi\n      SQLite\n      SQL so'rovlar\n      CRUD operatsiyalar\n    AI vositalar\n      Copilot\n      Ghostwriter\n      Kod review\n    Deployment\n      Railway / Render\n      Docker tushunchasi\n      Xavfsizlik"
+      "mindmapData": {
+        "center": "2-Oy: Veb Dasturlash",
+        "branches": [
+          { "label": "Frontend", "icon": "monitor", "items": ["HTML semantik teglar", "CSS Flexbox", "JavaScript DOM", "Interaktiv sahifalar"] },
+          { "label": "Backend", "icon": "settings", "items": ["Flask framework", "Marshrutlar va API", "Jinja2 shablonlar"] },
+          { "label": "Ma'lumotlar bazasi", "icon": "database", "items": ["SQLite", "SQL so'rovlar", "CRUD operatsiyalar"] },
+          { "label": "AI vositalar", "icon": "robot", "items": ["Copilot", "Ghostwriter", "Kod review"] },
+          { "label": "Deployment", "icon": "rocket", "items": ["Railway / Render", "Docker tushunchasi", "Xavfsizlik"] }
+        ]
+      }
     },
     {
       "id": 3,
       "title": "Mahorat va yakuniy loyiha",
       "subtitle": "Haqiqiy ilova yaratish va deploy qilish",
-      "icon": "🏆",
+      "icon": "trophy",
       "color": "green",
       "description": "Uchinchi oyda siz barcha bilimlaringizni birlashtirib, to'liq 'production-ready' ilova yaratasiz. Cursor, Claude Code kabi ilg'or AI vositalaridan foydalanasiz. Testlar yozasiz, kodni optimallashtirasiz va ilovani dunyoga taqdim etasiz.",
       "weeks": [
@@ -299,7 +317,16 @@
           "aiUsage": "AI to'liq sheriklaringiz: hujjat yozish, kod generatsiya, arxitektura maslahat — lekin siz DOIM qaror qabul qilasiz."
         }
       ],
-      "mindmap": "mindmap\n  root((3-Oy: Mahorat))\n    Loyiha rejasi\n      Texnologiya tanlash\n      Arxitektura dizayn\n      DB sxemasi\n    Dasturlash\n      CRUD\n      API integratsiya\n      AI pair-programming\n    Sifat nazorati\n      Testlar (Pytest)\n      Xavfsizlik audit\n      Performance\n    UX/UI\n      Responsive dizayn\n      Accessibility\n      Foydalanuvchi testlari\n    Yakunlash\n      Production deploy\n      Portfolio\n      Keyingi qadamlar"
+      "mindmapData": {
+        "center": "3-Oy: Mahorat",
+        "branches": [
+          { "label": "Loyiha rejasi", "icon": "clipboard", "items": ["Texnologiya tanlash", "Arxitektura dizayn", "DB sxemasi"] },
+          { "label": "Dasturlash", "icon": "laptop", "items": ["CRUD", "API integratsiya", "AI pair-programming"] },
+          { "label": "Sifat nazorati", "icon": "check-circle", "items": ["Pytest", "Xavfsizlik audit", "Performance"] },
+          { "label": "UX/UI", "icon": "palette", "items": ["Responsive dizayn", "Accessibility", "Foydalanuvchi testlari"] },
+          { "label": "Yakunlash", "icon": "flag", "items": ["Production deploy", "Portfolio", "Keyingi qadamlar"] }
+        ]
+      }
     }
   ],
   "aiRules": [
@@ -307,7 +334,7 @@
       "id": 1,
       "title": "So'ra, nusxa olma",
       "titleEn": "Ask-Don't-Copy",
-      "icon": "🎓",
+      "icon": "graduation",
       "description": "AI'dan tayyor kod so'ramang — tushuntirish so'rang. Dastlabki 1-2 oy AI sizga kod yozib bermaydi — siz har bir qatorni o'zingiz yozasiz.",
       "details": "AI'ga 'Ro'yxatni saralash funksiyasini yoz' demang. Buning o'rniga 'Ro'yxatni saralash uchun qanday algoritm ishlatiladi va u qanday ishlaydi?' deb so'rang. Xato bo'lsa 'Kodimni tuzat' emas, 'Bu xato nimani anglatadi va men uni qanday topishim mumkin?' deb so'rang.",
       "examples": [
@@ -320,7 +347,7 @@
       "id": 2,
       "title": "Har qatorni tushun",
       "titleEn": "Explain-Back Rule",
-      "icon": "🔍",
+      "icon": "search",
       "description": "Agar kodni qator-qator oddiy tilda tushuntirib bera olmasangiz — uni ishlatmang. AI har doim tushuntirish berishi mumkin.",
       "details": "AI yoki internetdan olingan har bir kod parchasini o'zingizga tushuntirib bering. AI'ga 'Bu kodning har bir qismini tushuntir' deb so'rang. Keyin o'zingiz boshqa birovga tushuntirib bera olasizmi — tekshiring. Agar biror qism 'qora quti' bo'lib qolsa, uni ishlatmang.",
       "examples": [

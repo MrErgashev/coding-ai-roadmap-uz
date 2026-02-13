@@ -1,5 +1,5 @@
 import WeekAccordion from './WeekAccordion'
-import MermaidDiagram from '../shared/MermaidDiagram'
+import PremiumMindmap from '../shared/PremiumMindmap'
 
 const colorMap = {
   blue: {
@@ -41,10 +41,18 @@ export default function MonthSection({ month, isChecked, toggleTask, getWeekProg
         ))}
       </div>
 
-      {month.mindmap && (
-        <div className="p-6 rounded-2xl bg-surface-50/80 dark:bg-surface-900/40 border border-surface-200/60 dark:border-surface-800/60">
-          <h3 className="text-sm font-semibold text-surface-500 dark:text-surface-400 mb-4">{month.id}-oy xaritasi</h3>
-          <MermaidDiagram chart={month.mindmap} />
+      {month.mindmapData && (
+        <div className="p-6 sm:p-8 rounded-3xl glass-card overflow-hidden relative">
+          <div className="absolute inset-0 mesh-gradient opacity-30" />
+          <div className="relative">
+            <h3 className="text-sm font-semibold text-surface-500 dark:text-surface-400 mb-6 flex items-center gap-2">
+              <svg className="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+              </svg>
+              {month.id}-oy xaritasi
+            </h3>
+            <PremiumMindmap data={month.mindmapData} color={month.color} />
+          </div>
         </div>
       )}
     </section>

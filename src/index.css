@@ -331,6 +331,60 @@ html.dark .mesh-gradient {
   transform: translateY(0);
 }
 
+/* ========== PREMIUM MINDMAP ========== */
+.mindmap-center {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-align: center;
+  color: white;
+  letter-spacing: -0.01em;
+  animation: glow-pulse 3s ease-in-out infinite, float 6s ease-in-out infinite;
+}
+.mindmap-center::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, transparent 50%);
+  pointer-events: none;
+}
+@media (max-width: 767px) {
+  .mindmap-center {
+    width: 120px;
+    height: 120px;
+    font-size: 0.8rem;
+  }
+}
+
+.mindmap-branch {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mindmap-branch:hover {
+  transform: translateY(-4px) scale(1.03);
+}
+html.dark .mindmap-branch:hover {
+  box-shadow: 0 12px 40px -8px rgba(59, 130, 246, 0.1),
+              0 4px 16px -4px rgba(0, 0, 0, 0.2);
+}
+.mindmap-branch:hover {
+  box-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.08),
+              0 4px 16px -4px rgba(0, 0, 0, 0.04);
+}
+
+.icon-3d-sm {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  font-size: 18px;
+}
+
 /* ========== APPLE DOT GRID ========== */
 .dot-grid {
   background-image: radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px);
