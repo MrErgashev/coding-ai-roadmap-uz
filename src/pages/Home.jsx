@@ -17,10 +17,10 @@ export default function Home({ months, totalProgress, getWeekProgress }) {
     <>
       <Hero totalProgress={totalProgress} />
 
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <section className="py-20">
+        <div className="max-w-[1140px] mx-auto px-4 sm:px-6">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-3">3 oy — 3 bosqich</h2>
-          <p className="text-gray-500 dark:text-gray-400 text-center mb-10 max-w-xl mx-auto">
+          <p className="text-surface-500 dark:text-surface-400 text-center mb-12 max-w-xl mx-auto">
             Har bir oy yangi bilim darajasiga olib chiqadi. Oxirida to'liq veb-ilova yaratasiz.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
