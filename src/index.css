@@ -76,7 +76,7 @@ html.dark ::-webkit-scrollbar-thumb { @apply bg-surface-700/60; }
 /* ========== CHECKBOX ========== */
 input[type="checkbox"] {
   @apply appearance-none w-[18px] h-[18px] rounded-md border-2 border-surface-300
-         bg-white dark:bg-surface-900 dark:border-surface-600
+         bg-white dark:bg-surface-900 dark:border-surface-700
          checked:bg-primary-600 checked:border-primary-600
          transition-all duration-200 cursor-pointer shrink-0 relative;
 }
@@ -92,7 +92,7 @@ input[type="checkbox"]:checked::after {
   transform: rotate(45deg);
 }
 input[type="checkbox"]:focus-visible {
-  @apply outline-none ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-surface-900;
+  @apply outline-none ring-2 ring-primary-500/40 ring-offset-2 dark:ring-offset-surface-950;
 }
 
 /* ========== FOCUS ========== */

@@ -77,7 +77,7 @@ export default function Hero({ totalProgress }) {
           {/* Subtitle */}
           <p className="animate-fade-up delay-200 text-lg sm:text-xl text-surface-500 dark:text-surface-400 mb-12 leading-relaxed max-w-2xl mx-auto">
             Python, JavaScript, Database va Deployment — barchasini amaliy loyihalar
-            orqali o'rganing. AI vositalaridan to'g'ri foydalanishni ham bilib oling.
+            orqali professional darajada o'rganing.
           </p>
 
           {/* CTA Buttons */}

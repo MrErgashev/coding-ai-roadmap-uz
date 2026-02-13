@@ -142,6 +142,7 @@ export default function ArchitectureDiagram() {
               />
               <div className="md:hidden text-3xl text-surface-300 dark:text-surface-600 my-2">⇅</div>
             </div>
+          </div>
 
             {/* Database */}
             <div className="md:col-span-2">
