@@ -3,7 +3,7 @@ export default function ThemeToggle({ dark, toggle }) {
     <button
       onClick={toggle}
       aria-label={dark ? "Yorug' rejimga o'tish" : "Qorong'u rejimga o'tish"}
-      className="p-2 rounded-lg hover:bg-surface-100 dark:hover:bg-surface-800 transition-colors focus-ring"
+      className="p-2.5 rounded-xl glass-card transition-all duration-300 hover:scale-105 active:scale-95 focus-ring"
     >
       {dark ? (
         <svg className="w-[18px] h-[18px] text-amber-400" fill="currentColor" viewBox="0 0 20 20">
