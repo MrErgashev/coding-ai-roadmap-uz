@@ -12,11 +12,18 @@ const navLinks = [
 export default function Header({ dark, toggleTheme }) {
   const { pathname } = useLocation()
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const menuRef = useRef(null)
 
   useEffect(() => {
     setMobileOpen(false)
   }, [pathname])
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 10)
+    window.addEventListener('scroll', handler, { passive: true })
+    return () => window.removeEventListener('scroll', handler)
+  }, [])
 
   useEffect(() => {
     if (!mobileOpen) return
@@ -30,27 +37,33 @@ export default function Header({ dark, toggleTheme }) {
   }, [mobileOpen])
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-surface-950/80 border-b border-surface-200/50 dark:border-surface-800/50">
+    <header className={`sticky top-0 z-50 transition-all duration-500 ${
+      scrolled
+        ? 'glass border-b border-surface-200/30 dark:border-surface-800/30 shadow-sm shadow-surface-900/[0.03]'
+        : 'bg-transparent border-b border-transparent'
+    }`}>
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center text-white text-sm font-bold shadow-sm shadow-primary-600/25 group-hover:shadow-md group-hover:shadow-primary-600/30 transition-all duration-200">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="icon-3d icon-3d-primary w-9 h-9 flex items-center justify-center text-white text-sm font-bold transition-transform duration-300 group-hover:scale-110">
               C
             </div>
-            <span className="hidden sm:inline font-semibold text-[15px] tracking-tight text-surface-900 dark:text-surface-100">
+            <span className="hidden sm:inline font-bold text-[15px] tracking-tight text-surface-900 dark:text-surface-100">
               Coding + AI
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-1" role="navigation" aria-label="Asosiy navigatsiya">
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-1 glass-card rounded-2xl px-1.5 py-1.5" role="navigation" aria-label="Asosiy navigatsiya">
             {navLinks.map(link => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`px-3.5 py-2 rounded-lg text-[13px] font-medium transition-all duration-200 ${
+                className={`px-4 py-2 rounded-xl text-[13px] font-semibold transition-all duration-300 ${
                   pathname === link.to
-                    ? 'bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300'
-                    : 'text-surface-500 hover:text-surface-900 hover:bg-surface-50 dark:text-surface-400 dark:hover:text-surface-100 dark:hover:bg-surface-800/50'
+                    ? 'bg-surface-900 dark:bg-white text-white dark:text-surface-900 shadow-sm'
+                    : 'text-surface-500 hover:text-surface-900 dark:text-surface-400 dark:hover:text-surface-100 hover:bg-surface-100/50 dark:hover:bg-surface-800/30'
                 }`}
               >
                 {link.label}
@@ -58,14 +71,15 @@ export default function Header({ dark, toggleTheme }) {
             ))}
           </nav>
 
-          <div className="flex items-center gap-1.5">
+          {/* Right side */}
+          <div className="flex items-center gap-2">
             <ThemeToggle dark={dark} toggle={toggleTheme} />
             <div className="md:hidden" ref={menuRef}>
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
                 aria-label="Menyu"
                 aria-expanded={mobileOpen}
-                className="p-2 rounded-lg hover:bg-surface-100 dark:hover:bg-surface-800 transition-colors focus-ring"
+                className="p-2.5 rounded-xl glass-card transition-all duration-200 focus-ring"
               >
                 {mobileOpen ? (
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,15 +92,15 @@ export default function Header({ dark, toggleTheme }) {
                 )}
               </button>
               {mobileOpen && (
-                <div className="absolute right-4 top-full mt-2 w-56 py-2 bg-white dark:bg-surface-900 rounded-2xl shadow-lg shadow-surface-900/[0.08] border border-surface-200/80 dark:border-surface-700/80 dark:shadow-surface-950/40">
+                <div className="absolute right-4 top-full mt-3 w-64 glass-card rounded-3xl p-3 shadow-xl shadow-surface-900/[0.08] dark:shadow-surface-950/40">
                   {navLinks.map(link => (
                     <Link
                       key={link.to}
                       to={link.to}
-                      className={`block px-4 py-2.5 text-sm font-medium transition-colors ${
+                      className={`flex items-center gap-3 px-4 py-3.5 rounded-2xl text-sm font-semibold transition-all duration-200 ${
                         pathname === link.to
-                          ? 'text-primary-600 bg-primary-50/80 dark:bg-primary-900/20 dark:text-primary-400'
-                          : 'text-surface-600 hover:bg-surface-50 dark:text-surface-300 dark:hover:bg-surface-800'
+                          ? 'bg-surface-900 dark:bg-white text-white dark:text-surface-900'
+                          : 'text-surface-600 hover:bg-surface-100/50 dark:text-surface-300 dark:hover:bg-surface-800/30'
                       }`}
                     >
                       {link.label}
