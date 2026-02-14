@@ -1,4 +1,5 @@
 import { forwardRef } from 'react'
+import { createPortal } from 'react-dom'
 import data from '../../data/roadmap.json'
 import MappedIcon from './IconMap'
 import { SiPython, SiJavascript, SiFlask } from 'react-icons/si'
@@ -485,7 +486,7 @@ function PrintableResources() {
 /* ============================================================
    MAIN PRINTABLE DOCUMENT
    ============================================================ */
-const PrintableDocument = forwardRef(function PrintableDocument({ theme }, ref) {
+const PrintableDocumentContent = forwardRef(function PrintableDocumentContent({ theme }, ref) {
   const themeClass = theme === 'dark' ? 'dark' : ''
 
   return (
@@ -538,5 +539,12 @@ const PrintableDocument = forwardRef(function PrintableDocument({ theme }, ref) 
     </div>
   )
 })
+
+/* Portal wrapper — renders outside #root into #pdf-root */
+function PrintableDocument(props) {
+  const container = document.getElementById('pdf-root')
+  if (!container) return null
+  return createPortal(<PrintableDocumentContent {...props} />, container)
+}
 
 export default PrintableDocument

@@ -434,12 +434,12 @@ html.dark .dot-grid {
 /* ========== PRINT STYLES ========== */
 @media print {
   /* Hide normal app UI */
-  body > #root {
+  #root {
     display: none !important;
   }
 
-  /* Show printable container */
-  .printable-document {
+  /* Show printable container via portal in #pdf-root */
+  #pdf-root .printable-document {
     display: block !important;
     position: static !important;
     left: auto !important;
