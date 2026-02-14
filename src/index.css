@@ -398,12 +398,13 @@ html.dark .dot-grid {
   background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
 }
 
-/* ========== PRINTABLE DOCUMENT (off-screen) ========== */
+/* ========== PRINTABLE DOCUMENT (hidden but in-flow for print) ========== */
 .printable-document {
-  position: fixed;
+  position: absolute;
   left: -9999px;
   top: 0;
   width: 210mm;
+  overflow: hidden;
   background: white;
   color: #171717;
   font-family: var(--font-sans);
@@ -467,6 +468,8 @@ html.dark .dot-grid {
     position: static !important;
     left: auto !important;
     width: 100% !important;
+    overflow: visible !important;
+    height: auto !important;
   }
 
   /* Force exact colors in print */

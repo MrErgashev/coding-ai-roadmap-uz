@@ -41,26 +41,34 @@ function PrintableHome() {
   }
 
   return (
-    <div className="px-8 py-8">
-      {/* Hero — compact */}
-      <div className="text-center mb-8">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full print-card text-xs font-medium mb-6">
-          <span className="w-2 h-2 rounded-full bg-emerald-500" />
-          <span>3 oy | 12 hafta | Bosqichma-bosqich</span>
+    <div className="px-8 py-6">
+      {/* Logo + Title */}
+      <div className="flex items-center gap-3 mb-6">
+        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-purple-600 flex items-center justify-center text-white shrink-0">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
         </div>
+        <div>
+          <h1 className="text-2xl font-extrabold tracking-tight leading-none">Coding + AI Roadmap</h1>
+          <p className="text-[10px] text-surface-400 dark:text-surface-500 mt-0.5">12 hafta · 3 oy · Bosqichma-bosqich</p>
+        </div>
+      </div>
 
-        <h1 className="text-4xl font-extrabold tracking-tight mb-4 leading-[1.1]">
+      {/* Hero — compact */}
+      <div className="text-center mb-6">
+        <h2 className="text-3xl font-extrabold tracking-tight mb-3 leading-[1.1]">
           <span className="block">Dasturlashni o'rganing,</span>
           <span className="gradient-text block mt-1">AI bilan yuksaling</span>
-        </h1>
+        </h2>
 
-        <p className="text-sm text-surface-500 dark:text-surface-400 mb-6 leading-relaxed max-w-xl mx-auto">
+        <p className="text-xs text-surface-500 dark:text-surface-400 mb-4 leading-relaxed max-w-lg mx-auto">
           Python, JavaScript, Database va Deployment — barchasini amaliy loyihalar orqali professional darajada o'rganing.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-2">
+        <div className="flex flex-wrap justify-center gap-1.5">
           {techBadges.map((tech) => (
-            <span key={tech.name} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg print-card text-xs font-medium">
+            <span key={tech.name} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg print-card text-[10px] font-medium">
               <span style={{ color: tech.iconColor }}>{tech.icon}</span>
               {tech.name}
             </span>
@@ -69,39 +77,36 @@ function PrintableHome() {
       </div>
 
       {/* Stats — 4 columns forced */}
-      <div className="print-grid-4 gap-4 mb-8">
+      <div className="print-grid-4 gap-3 mb-6">
         {stats.map((stat) => (
-          <div key={stat.label} className="p-4 rounded-2xl print-card text-center">
-            <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center text-white mx-auto mb-3`}>
+          <div key={stat.label} className="p-3 rounded-xl print-card text-center">
+            <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${stat.color} flex items-center justify-center text-white mx-auto mb-2`}>
               {stat.icon}
             </div>
-            <div className="text-2xl font-extrabold mb-0.5 gradient-text">{stat.value}</div>
-            <div className="text-xs text-surface-500 dark:text-surface-400 font-medium">{stat.label}</div>
+            <div className="text-xl font-extrabold mb-0.5 gradient-text">{stat.value}</div>
+            <div className="text-[10px] text-surface-500 dark:text-surface-400 font-medium">{stat.label}</div>
           </div>
         ))}
       </div>
 
       {/* Month Cards — 3 columns forced */}
-      <div className="mb-8">
-        <h2 className="text-xl font-extrabold mb-1 text-center">3 oy — <span className="gradient-text">3 bosqich</span></h2>
-        <p className="text-xs text-surface-500 dark:text-surface-400 text-center mb-4">Har bir oy yangi bilim darajasiga olib chiqadi.</p>
-      </div>
-      <div className="print-grid-3 gap-4 mb-8">
+      <h2 className="text-lg font-extrabold mb-3 text-center">3 oy — <span className="gradient-text">3 bosqich</span></h2>
+      <div className="print-grid-3 gap-3 mb-6">
         {months.map(month => {
           const style = monthStyles[month.id] || monthStyles[1]
           return (
-            <div key={month.id} className="p-5 rounded-2xl print-card">
-              <div className="flex items-start justify-between mb-4">
-                <div className={`w-10 h-10 rounded-xl ${style.bg} flex items-center justify-center text-white`}>
-                  <MappedIcon name={month.icon} size={20} />
+            <div key={month.id} className="p-4 rounded-xl print-card">
+              <div className="flex items-center gap-2.5 mb-2">
+                <div className={`w-8 h-8 rounded-lg ${style.bg} flex items-center justify-center text-white shrink-0`}>
+                  <MappedIcon name={month.icon} size={16} />
                 </div>
-                <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold bg-gradient-to-r ${style.gradient} text-white`}>
+                <h3 className="font-bold text-sm">{month.title}</h3>
+                <span className={`ml-auto px-2 py-0.5 rounded-full text-[9px] font-bold bg-gradient-to-r ${style.gradient} text-white`}>
                   {month.id}-oy
                 </span>
               </div>
-              <h3 className="font-bold text-base mb-1.5">{month.title}</h3>
-              <p className="text-xs text-surface-500 dark:text-surface-400 mb-3 leading-relaxed">{month.description}</p>
-              <div className="flex items-center gap-2 text-[10px] text-surface-400">
+              <p className="text-[10px] text-surface-500 dark:text-surface-400 mb-2 leading-relaxed">{month.description}</p>
+              <div className="flex items-center gap-2 text-[9px] text-surface-400">
                 <span>{month.weeks.length} hafta</span>
                 <span className="w-1 h-1 rounded-full bg-surface-300 dark:bg-surface-600" />
                 <span>{month.weeks.reduce((a, w) => a + w.tasks.length, 0)} topshiriq</span>
@@ -111,56 +116,40 @@ function PrintableHome() {
         })}
       </div>
 
-      {/* Features — 3 columns forced */}
-      <div className="mb-4">
-        <h2 className="text-xl font-extrabold mb-1 text-center">Bitta roadmap — <span className="gradient-text">barcha ko'nikmalar</span></h2>
-      </div>
-      <div className="print-grid-3 gap-4 mb-8">
+      {/* Features — 2x3 grid */}
+      <h2 className="text-lg font-extrabold mb-3 text-center">Bitta roadmap — <span className="gradient-text">barcha ko'nikmalar</span></h2>
+      <div className="print-grid-3 gap-3 mb-6">
         {features.map((feat) => (
-          <div key={feat.title} className="p-5 rounded-2xl print-card">
-            <div className={`w-10 h-10 rounded-xl ${feat.color} flex items-center justify-center text-white mb-3`}>
+          <div key={feat.title} className="p-3 rounded-xl print-card flex items-start gap-2.5">
+            <div className={`w-8 h-8 rounded-lg ${feat.color} flex items-center justify-center text-white shrink-0`}>
               {feat.icon}
             </div>
-            <h3 className="font-bold text-sm mb-1">{feat.title}</h3>
-            <p className="text-xs text-surface-500 dark:text-surface-400 leading-relaxed">{feat.desc}</p>
+            <div>
+              <h3 className="font-bold text-xs mb-0.5">{feat.title}</h3>
+              <p className="text-[10px] text-surface-500 dark:text-surface-400 leading-relaxed">{feat.desc}</p>
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Architecture — 3 columns forced */}
-      <div className="mb-4">
-        <h2 className="text-xl font-extrabold mb-1 text-center">Full-Stack <span className="gradient-text">arxitektura</span></h2>
-        <p className="text-xs text-surface-500 dark:text-surface-400 text-center mb-4">Veb-ilova qanday ishlaydi: brauzerdan servergacha.</p>
-      </div>
-      <div className="print-grid-3 gap-4 mb-4">
+      {/* Architecture — 3 columns */}
+      <h2 className="text-lg font-extrabold mb-3 text-center">Full-Stack <span className="gradient-text">arxitektura</span></h2>
+      <div className="print-grid-3 gap-3">
         {[
-          { icon: <LuMonitor size={22} />, title: 'Client (Brauzer)', subtitle: 'HTML, CSS, JavaScript', tags: ['DOM', 'Fetch API', 'UI'], color: 'bg-blue-600' },
-          { icon: <LuSettings size={22} />, title: 'Server (Backend)', subtitle: 'Python, Flask', tags: ['Routes', 'API', 'Logic'], color: 'bg-purple-600' },
-          { icon: <LuDatabase size={22} />, title: 'Database (Baza)', subtitle: 'SQLite, PostgreSQL', tags: ['Tables', 'CRUD', 'SQL'], color: 'bg-emerald-600' },
+          { icon: <LuMonitor size={18} />, title: 'Client', subtitle: 'HTML, CSS, JS', tags: ['DOM', 'Fetch', 'UI'], color: 'bg-blue-600' },
+          { icon: <LuSettings size={18} />, title: 'Server', subtitle: 'Python, Flask', tags: ['Routes', 'API', 'Logic'], color: 'bg-purple-600' },
+          { icon: <LuDatabase size={18} />, title: 'Database', subtitle: 'SQLite, PostgreSQL', tags: ['Tables', 'CRUD', 'SQL'], color: 'bg-emerald-600' },
         ].map(node => (
-          <div key={node.title} className="p-5 rounded-2xl print-card text-center">
-            <div className={`w-10 h-10 rounded-xl ${node.color} flex items-center justify-center text-white mx-auto mb-3`}>{node.icon}</div>
-            <h3 className="font-bold text-sm mb-0.5">{node.title}</h3>
-            <p className="text-[10px] text-surface-500 dark:text-surface-400 mb-2">{node.subtitle}</p>
+          <div key={node.title} className="p-3 rounded-xl print-card text-center">
+            <div className={`w-8 h-8 rounded-lg ${node.color} flex items-center justify-center text-white mx-auto mb-2`}>{node.icon}</div>
+            <h3 className="font-bold text-xs">{node.title}</h3>
+            <p className="text-[9px] text-surface-500 dark:text-surface-400 mb-1.5">{node.subtitle}</p>
             <div className="flex flex-wrap justify-center gap-1">
               {node.tags.map(tag => (
-                <span key={tag} className="px-2 py-0.5 text-[9px] font-medium rounded bg-surface-100 dark:bg-surface-800 text-surface-500 dark:text-surface-400">{tag}</span>
+                <span key={tag} className="px-1.5 py-0.5 text-[8px] font-medium rounded bg-surface-100 dark:bg-surface-800 text-surface-500 dark:text-surface-400">{tag}</span>
               ))}
             </div>
           </div>
-        ))}
-      </div>
-      <div className="flex justify-center gap-6 text-xs text-surface-500 dark:text-surface-400">
-        {[
-          { label: 'Frontend', desc: "foydalanuvchi ko'radi", color: 'bg-blue-500' },
-          { label: 'Backend', desc: 'mantiq va hisob-kitob', color: 'bg-purple-500' },
-          { label: 'Database', desc: "ma'lumotlar saqlanadi", color: 'bg-emerald-500' },
-        ].map(item => (
-          <span key={item.label} className="flex items-center gap-1.5">
-            <span className={`w-2.5 h-2.5 rounded ${item.color}`} />
-            <span className="font-medium">{item.label}</span>
-            <span className="text-surface-400 dark:text-surface-500">— {item.desc}</span>
-          </span>
         ))}
       </div>
     </div>
@@ -479,45 +468,27 @@ function PrintableDocumentContent() {
       id="pdf-printable"
       className="printable-document bg-white dark:bg-[#0a0a0a] text-surface-900 dark:text-surface-100"
     >
-      {/* Cover / Title */}
-      <div className="px-8 pt-12 pb-8 text-center">
-        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-500 to-purple-600 flex items-center justify-center text-white mx-auto mb-4">
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-        </div>
-        <h1 className="text-3xl font-extrabold tracking-tight mb-2">Coding + AI Roadmap</h1>
-        <p className="text-sm text-surface-500 dark:text-surface-400">
-          12 hafta · 3 oy · Bosqichma-bosqich dasturlashni o'rganing
-        </p>
-        <div className="mt-3 text-xs text-surface-400 dark:text-surface-500">
-          {new Date().toLocaleDateString('uz-UZ', { year: 'numeric', month: 'long', day: 'numeric' })}
-        </div>
-      </div>
+      {/* Home — starts immediately, no cover page waste */}
+      <PrintableHome />
 
-      {/* Page 1: Home */}
-      <div className="pdf-page-break">
-        <PrintableHome />
-      </div>
-
-      {/* Page 2: Roadmap */}
+      {/* Roadmap — new page */}
       <div className="pdf-page-break">
         <PrintableRoadmap />
       </div>
 
-      {/* Page 3: AI Rules */}
+      {/* AI Rules — new page */}
       <div className="pdf-page-break">
         <PrintableAIRules />
       </div>
 
-      {/* Page 4: Resources */}
+      {/* Resources — new page */}
       <div className="pdf-page-break">
         <PrintableResources />
       </div>
 
       {/* Footer */}
-      <div className="mt-6 py-4 border-t border-surface-200/60 dark:border-surface-800/60 text-center text-xs text-surface-400 dark:text-surface-500">
-        <p>Coding + AI Roadmap UZ — coding-ai-roadmap-uz</p>
+      <div className="mt-4 py-3 border-t border-surface-200/60 dark:border-surface-800/60 text-center text-[10px] text-surface-400 dark:text-surface-500 px-8">
+        <p>Coding + AI Roadmap UZ · {new Date().toLocaleDateString('uz-UZ', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
       </div>
     </div>
   )
