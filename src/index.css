@@ -397,3 +397,124 @@ html.dark .mindmap-branch:hover {
 html.dark .dot-grid {
   background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
 }
+
+/* ========== PRINTABLE DOCUMENT (off-screen) ========== */
+.printable-document {
+  position: fixed;
+  left: -9999px;
+  top: 0;
+  width: 210mm;
+  background: white;
+  color: #171717;
+  font-family: var(--font-sans);
+}
+.printable-document.dark {
+  background: #0a0a0a;
+  color: #f5f5f5;
+}
+
+/* Dark mode rules for .printable-document.dark (mirrors html.dark) */
+.printable-document.dark .glass {
+  background: rgba(10, 10, 10, 0.72);
+}
+.printable-document.dark .glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.printable-document.dark .dot-grid {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+}
+.printable-document.dark .mesh-gradient {
+  background:
+    radial-gradient(at 20% 20%, rgba(59, 130, 246, 0.08) 0px, transparent 50%),
+    radial-gradient(at 80% 40%, rgba(168, 85, 247, 0.06) 0px, transparent 50%),
+    radial-gradient(at 40% 80%, rgba(236, 72, 153, 0.04) 0px, transparent 50%);
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+  /* Hide normal app UI */
+  body > #root {
+    display: none !important;
+  }
+
+  /* Show printable container */
+  .printable-document {
+    display: block !important;
+    position: static !important;
+    left: auto !important;
+    width: 100% !important;
+  }
+
+  /* Force exact colors in print */
+  body {
+    padding: 0 !important;
+    margin: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Page breaks */
+  .pdf-page-break {
+    page-break-before: always;
+  }
+  .pdf-no-break {
+    page-break-inside: avoid;
+  }
+
+  /* Force accordions open */
+  .accordion-content {
+    grid-template-rows: 1fr !important;
+  }
+  .accordion-content > div {
+    overflow: visible !important;
+  }
+
+  /* Disable all animations */
+  *, *::before, *::after {
+    animation: none !important;
+    animation-duration: 0s !important;
+    transition: none !important;
+  }
+
+  /* Fix glassmorphism for print (backdrop-filter doesn't work in PDF) */
+  .glass, .glass-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .printable-document:not(.dark) .glass {
+    background: rgba(255, 255, 255, 0.95) !important;
+  }
+  .printable-document:not(.dark) .glass-card {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  }
+  .printable-document.dark .glass {
+    background: rgba(10, 10, 10, 0.95) !important;
+  }
+  .printable-document.dark .glass-card {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Disable 3D transforms and hover effects */
+  .premium-card, .icon-3d, .mindmap-branch {
+    transform: none !important;
+  }
+
+  /* Gradient text fallback for print */
+  .printable-document:not(.dark) .gradient-text {
+    -webkit-text-fill-color: #2563eb !important;
+    color: #2563eb !important;
+  }
+  .printable-document.dark .gradient-text {
+    -webkit-text-fill-color: #60a5fa !important;
+    color: #60a5fa !important;
+  }
+
+  /* Progress glow cleanup */
+  .progress-glow::after {
+    display: none !important;
+  }
+}

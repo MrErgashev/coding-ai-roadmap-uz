@@ -1,7 +1,5 @@
-import { useState } from 'react'
 import FilterBar from '../components/roadmap/FilterBar'
 import MonthSection from '../components/roadmap/MonthSection'
-import generatePDF from '../utils/generatePDF'
 
 export default function Roadmap({
   months,
@@ -12,38 +10,15 @@ export default function Roadmap({
   totalProgress,
   resetProgress
 }) {
-  const [isGenerating, setIsGenerating] = useState(false)
-
-  const handleDownload = () => {
-    setIsGenerating(true)
-    try {
-      generatePDF()
-    } finally {
-      setTimeout(() => setIsGenerating(false), 1000)
-    }
-  }
-
   return (
     <div className="max-w-[960px] mx-auto px-5 sm:px-8 py-12 sm:py-16">
-      <div className="mb-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-        <div>
-          <h1 className="text-[32px] sm:text-[40px] font-bold tracking-[-0.025em] leading-[1.15] mb-3">
-            Yo'l xaritasi
-          </h1>
-          <p className="text-surface-500 dark:text-surface-400 leading-relaxed">
-            12 hafta &middot; 3 oy &middot; Bosqichma-bosqich dasturlashni o'rganing
-          </p>
-        </div>
-        <button
-          onClick={handleDownload}
-          disabled={isGenerating}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow-md disabled:opacity-60 disabled:cursor-not-allowed shrink-0 cursor-pointer"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
-          {isGenerating ? 'Tayyorlanmoqda...' : 'PDF yuklab olish'}
-        </button>
+      <div className="mb-10">
+        <h1 className="text-[32px] sm:text-[40px] font-bold tracking-[-0.025em] leading-[1.15] mb-3">
+          Yo'l xaritasi
+        </h1>
+        <p className="text-surface-500 dark:text-surface-400 leading-relaxed">
+          12 hafta &middot; 3 oy &middot; Bosqichma-bosqich dasturlashni o'rganing
+        </p>
       </div>
 
       <FilterBar

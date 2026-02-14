@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import ThemeToggle from '../shared/ThemeToggle'
+import PDFDownloadModal from '../shared/PDFDownloadModal'
+import triggerPrint from '../../utils/generatePDF'
 
 const navLinks = [
   { to: '/', label: 'Bosh sahifa', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
@@ -13,6 +15,7 @@ export default function Header({ dark, toggleTheme }) {
   const { pathname } = useLocation()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [showPDFModal, setShowPDFModal] = useState(false)
   const menuRef = useRef(null)
 
   useEffect(() => {
@@ -37,6 +40,7 @@ export default function Header({ dark, toggleTheme }) {
   }, [mobileOpen])
 
   return (
+    <>
     <header className={`sticky top-0 z-50 transition-all duration-300 ${
       scrolled
         ? 'glass border-b border-surface-200/40 dark:border-surface-800/40 shadow-sm'
@@ -78,6 +82,16 @@ export default function Header({ dark, toggleTheme }) {
 
           {/* Right side */}
           <div className="flex items-center gap-2">
+            <button
+              onClick={() => setShowPDFModal(true)}
+              aria-label="PDF yuklab olish"
+              title="PDF yuklab olish"
+              className="p-2.5 rounded-xl glass-card transition-all focus-ring hover:scale-105 cursor-pointer"
+            >
+              <svg className="w-5 h-5 text-surface-500 dark:text-surface-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </button>
             <ThemeToggle dark={dark} toggle={toggleTheme} />
             <div className="md:hidden" ref={menuRef}>
               <button
@@ -122,5 +136,12 @@ export default function Header({ dark, toggleTheme }) {
         </div>
       </div>
     </header>
+
+    <PDFDownloadModal
+      isOpen={showPDFModal}
+      onClose={() => setShowPDFModal(false)}
+      onDownload={triggerPrint}
+    />
+    </>
   )
 }

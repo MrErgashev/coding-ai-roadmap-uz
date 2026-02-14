@@ -7,6 +7,7 @@ import Resources from './pages/Resources'
 import { useTheme } from './hooks/useTheme'
 import { useProgress } from './hooks/useProgress'
 import { useSearch } from './hooks/useSearch'
+import PrintableDocument from './components/shared/PrintableDocument'
 import data from './data/roadmap.json'
 
 export default function App() {
@@ -47,6 +48,7 @@ export default function App() {
           <Route path="/resources" element={<Resources />} />
         </Routes>
       </Layout>
+      <PrintableDocument />
     </HashRouter>
   )
 }
