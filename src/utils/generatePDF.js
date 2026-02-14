@@ -12,8 +12,28 @@ export default function triggerPrint(theme) {
     printEl.classList.remove('dark')
   }
 
-  // Small delay so styles settle, then trigger print
+  // Temporarily make printable doc visible and in-flow so browser
+  // computes correct layout before generating print preview
+  const root = document.getElementById('root')
+
+  // Hide app, show print doc
+  root.style.display = 'none'
+  printEl.style.position = 'static'
+  printEl.style.left = 'auto'
+  printEl.style.overflow = 'visible'
+  printEl.style.width = '100%'
+
+  // Let browser render one frame, then print
   requestAnimationFrame(() => {
-    window.print()
+    requestAnimationFrame(() => {
+      window.print()
+
+      // Restore after print dialog closes
+      root.style.display = ''
+      printEl.style.position = ''
+      printEl.style.left = ''
+      printEl.style.overflow = ''
+      printEl.style.width = ''
+    })
   })
 }
