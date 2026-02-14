@@ -1,4 +1,3 @@
-import { forwardRef } from 'react'
 import { createPortal } from 'react-dom'
 import data from '../../data/roadmap.json'
 import MappedIcon from './IconMap'
@@ -11,104 +10,98 @@ import { LuCalendarDays, LuCircleCheck, LuZap, LuRocket, LuGlobe, LuSettings, Lu
 function PrintableHome() {
   const { months } = data
   const stats = [
-    { value: '12', label: 'Hafta', icon: <LuCalendarDays size={24} />, color: 'from-blue-500 to-cyan-500' },
-    { value: '50+', label: 'Topshiriq', icon: <LuCircleCheck size={24} />, color: 'from-purple-500 to-pink-500' },
-    { value: '6', label: 'Texnologiya', icon: <LuZap size={24} />, color: 'from-orange-500 to-red-500' },
-    { value: '1', label: "To'liq loyiha", icon: <LuRocket size={24} />, color: 'from-emerald-500 to-teal-500' },
+    { value: '12', label: 'Hafta', icon: <LuCalendarDays size={20} />, color: 'from-blue-500 to-cyan-500' },
+    { value: '50+', label: 'Topshiriq', icon: <LuCircleCheck size={20} />, color: 'from-purple-500 to-pink-500' },
+    { value: '6', label: 'Texnologiya', icon: <LuZap size={20} />, color: 'from-orange-500 to-red-500' },
+    { value: '1', label: "To'liq loyiha", icon: <LuRocket size={20} />, color: 'from-emerald-500 to-teal-500' },
   ]
 
   const features = [
-    { icon: <SiPython size={28} />, title: "Noldan Python", desc: "Dasturlash asoslarini Python tilida o'rganing — o'zgaruvchilar, funksiyalar, OOP", iconClass: 'icon-3d icon-3d-blue' },
-    { icon: <LuGlobe size={28} />, title: 'Web Development', desc: "HTML, CSS, JavaScript — interaktiv veb-sahifalar yaratish", iconClass: 'icon-3d icon-3d-cyan' },
-    { icon: <LuSettings size={28} />, title: 'Backend (Flask)', desc: "Python Flask bilan API va server tomonni yarating", iconClass: 'icon-3d icon-3d-purple' },
-    { icon: <LuDatabase size={28} />, title: "Database & SQL", desc: "Ma'lumotlar bazasi bilan ishlash — SQLite, CRUD operatsiyalari", iconClass: 'icon-3d icon-3d-emerald' },
-    { icon: <LuBot size={28} />, title: "AI Tools", desc: "ChatGPT, Copilot va boshqa AI vositalaridan to'g'ri foydalanish", iconClass: 'icon-3d icon-3d-pink' },
-    { icon: <LuRocket size={28} />, title: 'Deploy', desc: "Loyihangizni internetga chiqaring — hosting, domain, CI/CD", iconClass: 'icon-3d icon-3d-orange' },
+    { icon: <SiPython size={22} />, title: "Noldan Python", desc: "Dasturlash asoslarini Python tilida o'rganing", color: 'bg-blue-600' },
+    { icon: <LuGlobe size={22} />, title: 'Web Development', desc: "HTML, CSS, JavaScript — veb-sahifalar yaratish", color: 'bg-cyan-600' },
+    { icon: <LuSettings size={22} />, title: 'Backend (Flask)', desc: "Python Flask bilan API yarating", color: 'bg-purple-600' },
+    { icon: <LuDatabase size={22} />, title: "Database & SQL", desc: "SQLite, CRUD operatsiyalari", color: 'bg-emerald-600' },
+    { icon: <LuBot size={22} />, title: "AI Tools", desc: "AI vositalaridan to'g'ri foydalanish", color: 'bg-pink-600' },
+    { icon: <LuRocket size={22} />, title: 'Deploy', desc: "Loyihani internetga chiqarish", color: 'bg-orange-600' },
   ]
 
   const techBadges = [
-    { name: 'Python', iconColor: '#3776AB', icon: <SiPython size={16} /> },
-    { name: 'JavaScript', iconColor: '#F7DF1E', icon: <SiJavascript size={16} /> },
-    { name: 'Flask', iconColor: '#44a348', icon: <SiFlask size={16} /> },
-    { name: 'SQL', iconColor: '#3b82f6', icon: <LuDatabase size={16} /> },
-    { name: 'AI Tools', iconColor: '#a855f7', icon: <LuBot size={16} /> },
-    { name: 'Deploy', iconColor: '#f97316', icon: <LuRocket size={16} /> },
+    { name: 'Python', iconColor: '#3776AB', icon: <SiPython size={14} /> },
+    { name: 'JavaScript', iconColor: '#F7DF1E', icon: <SiJavascript size={14} /> },
+    { name: 'Flask', iconColor: '#44a348', icon: <SiFlask size={14} /> },
+    { name: 'SQL', iconColor: '#3b82f6', icon: <LuDatabase size={14} /> },
+    { name: 'AI Tools', iconColor: '#a855f7', icon: <LuBot size={14} /> },
+    { name: 'Deploy', iconColor: '#f97316', icon: <LuRocket size={14} /> },
   ]
 
   const monthStyles = {
-    1: { gradient: 'from-blue-500 to-cyan-400', iconClass: 'icon-3d icon-3d-blue' },
-    2: { gradient: 'from-purple-500 to-pink-400', iconClass: 'icon-3d icon-3d-purple' },
-    3: { gradient: 'from-emerald-500 to-teal-400', iconClass: 'icon-3d icon-3d-emerald' },
+    1: { gradient: 'from-blue-500 to-cyan-400', bg: 'bg-blue-600' },
+    2: { gradient: 'from-purple-500 to-pink-400', bg: 'bg-purple-600' },
+    3: { gradient: 'from-emerald-500 to-teal-400', bg: 'bg-emerald-600' },
   }
 
   return (
-    <div className="px-5 sm:px-8 py-12">
-      {/* Hero */}
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full glass-card text-sm font-medium mb-10">
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
-          </span>
-          <span className="text-surface-600 dark:text-surface-300">
-            3 oy <span className="text-surface-300 dark:text-surface-600 mx-1">|</span> 12 hafta <span className="text-surface-300 dark:text-surface-600 mx-1">|</span> Bosqichma-bosqich
-          </span>
+    <div className="px-8 py-8">
+      {/* Hero — compact */}
+      <div className="text-center mb-8">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full print-card text-xs font-medium mb-6">
+          <span className="w-2 h-2 rounded-full bg-emerald-500" />
+          <span>3 oy | 12 hafta | Bosqichma-bosqich</span>
         </div>
 
-        <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight mb-8 leading-[1.05]">
-          <span className="text-surface-900 dark:text-white block">Dasturlashni o'rganing,</span>
-          <span className="gradient-text block mt-2">AI bilan yuksaling</span>
+        <h1 className="text-4xl font-extrabold tracking-tight mb-4 leading-[1.1]">
+          <span className="block">Dasturlashni o'rganing,</span>
+          <span className="gradient-text block mt-1">AI bilan yuksaling</span>
         </h1>
 
-        <p className="text-lg text-surface-500 dark:text-surface-400 mb-12 leading-relaxed max-w-2xl mx-auto">
+        <p className="text-sm text-surface-500 dark:text-surface-400 mb-6 leading-relaxed max-w-xl mx-auto">
           Python, JavaScript, Database va Deployment — barchasini amaliy loyihalar orqali professional darajada o'rganing.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="flex flex-wrap justify-center gap-2">
           {techBadges.map((tech) => (
-            <div key={tech.name} className="flex items-center gap-2 px-4 py-2 rounded-xl glass-card text-sm font-medium text-surface-600 dark:text-surface-300">
-              <span className="flex items-center" style={{ color: tech.iconColor }}>{tech.icon}</span>
+            <span key={tech.name} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg print-card text-xs font-medium">
+              <span style={{ color: tech.iconColor }}>{tech.icon}</span>
               {tech.name}
-            </div>
+            </span>
           ))}
         </div>
       </div>
 
-      {/* Stats */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
+      {/* Stats — 4 columns forced */}
+      <div className="print-grid-4 gap-4 mb-8">
         {stats.map((stat) => (
-          <div key={stat.label} className="relative p-6 rounded-3xl glass-card text-center">
-            <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center text-white mx-auto mb-4 shadow-lg`}>
+          <div key={stat.label} className="p-4 rounded-2xl print-card text-center">
+            <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center text-white mx-auto mb-3`}>
               {stat.icon}
             </div>
-            <div className="text-3xl font-extrabold mb-1 gradient-text">{stat.value}</div>
-            <div className="text-sm text-surface-500 dark:text-surface-400 font-medium">{stat.label}</div>
+            <div className="text-2xl font-extrabold mb-0.5 gradient-text">{stat.value}</div>
+            <div className="text-xs text-surface-500 dark:text-surface-400 font-medium">{stat.label}</div>
           </div>
         ))}
       </div>
 
-      {/* Month Cards */}
-      <div className="text-center mb-10">
-        <h2 className="text-3xl font-extrabold mb-4">3 oy — <span className="gradient-text">3 bosqich</span></h2>
-        <p className="text-surface-500 dark:text-surface-400 max-w-xl mx-auto text-lg">
-          Har bir oy yangi bilim darajasiga olib chiqadi.
-        </p>
+      {/* Month Cards — 3 columns forced */}
+      <div className="mb-8">
+        <h2 className="text-xl font-extrabold mb-1 text-center">3 oy — <span className="gradient-text">3 bosqich</span></h2>
+        <p className="text-xs text-surface-500 dark:text-surface-400 text-center mb-4">Har bir oy yangi bilim darajasiga olib chiqadi.</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-7 mb-16">
+      <div className="print-grid-3 gap-4 mb-8">
         {months.map(month => {
           const style = monthStyles[month.id] || monthStyles[1]
           return (
-            <div key={month.id} className="p-7 rounded-3xl glass-card relative overflow-hidden">
-              <div className="flex items-start justify-between mb-6">
-                <div className={style.iconClass}>
-                  <MappedIcon name={month.icon} size={28} />
+            <div key={month.id} className="p-5 rounded-2xl print-card">
+              <div className="flex items-start justify-between mb-4">
+                <div className={`w-10 h-10 rounded-xl ${style.bg} flex items-center justify-center text-white`}>
+                  <MappedIcon name={month.icon} size={20} />
                 </div>
-                <span className={`px-3 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r ${style.gradient} text-white shadow-lg`}>
+                <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold bg-gradient-to-r ${style.gradient} text-white`}>
                   {month.id}-oy
                 </span>
               </div>
-              <h3 className="font-bold text-xl mb-2.5">{month.title}</h3>
-              <p className="text-sm text-surface-500 dark:text-surface-400 mb-5 leading-relaxed">{month.description}</p>
-              <div className="flex items-center gap-3 text-xs text-surface-400 dark:text-surface-500">
+              <h3 className="font-bold text-base mb-1.5">{month.title}</h3>
+              <p className="text-xs text-surface-500 dark:text-surface-400 mb-3 leading-relaxed">{month.description}</p>
+              <div className="flex items-center gap-2 text-[10px] text-surface-400">
                 <span>{month.weeks.length} hafta</span>
                 <span className="w-1 h-1 rounded-full bg-surface-300 dark:bg-surface-600" />
                 <span>{month.weeks.reduce((a, w) => a + w.tasks.length, 0)} topshiriq</span>
@@ -118,54 +111,54 @@ function PrintableHome() {
         })}
       </div>
 
-      {/* Features */}
-      <div className="text-center mb-10">
-        <h2 className="text-3xl font-extrabold mb-4">Bitta roadmap — <span className="gradient-text">barcha ko'nikmalar</span></h2>
+      {/* Features — 3 columns forced */}
+      <div className="mb-4">
+        <h2 className="text-xl font-extrabold mb-1 text-center">Bitta roadmap — <span className="gradient-text">barcha ko'nikmalar</span></h2>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+      <div className="print-grid-3 gap-4 mb-8">
         {features.map((feat) => (
-          <div key={feat.title} className="p-7 rounded-3xl glass-card relative overflow-hidden">
-            <div className={feat.iconClass + ' mb-5'}>{feat.icon}</div>
-            <h3 className="font-bold text-lg mb-2">{feat.title}</h3>
-            <p className="text-sm text-surface-500 dark:text-surface-400 leading-relaxed">{feat.desc}</p>
+          <div key={feat.title} className="p-5 rounded-2xl print-card">
+            <div className={`w-10 h-10 rounded-xl ${feat.color} flex items-center justify-center text-white mb-3`}>
+              {feat.icon}
+            </div>
+            <h3 className="font-bold text-sm mb-1">{feat.title}</h3>
+            <p className="text-xs text-surface-500 dark:text-surface-400 leading-relaxed">{feat.desc}</p>
           </div>
         ))}
       </div>
 
-      {/* Architecture */}
-      <div className="text-center mb-10">
-        <h2 className="text-3xl font-extrabold mb-4">Full-Stack <span className="gradient-text">arxitektura</span></h2>
-        <p className="text-surface-500 dark:text-surface-400 max-w-xl mx-auto text-lg">
-          Veb-ilova qanday ishlaydi: brauzerdan servergacha, serverdan bazagacha.
-        </p>
+      {/* Architecture — 3 columns forced */}
+      <div className="mb-4">
+        <h2 className="text-xl font-extrabold mb-1 text-center">Full-Stack <span className="gradient-text">arxitektura</span></h2>
+        <p className="text-xs text-surface-500 dark:text-surface-400 text-center mb-4">Veb-ilova qanday ishlaydi: brauzerdan servergacha.</p>
       </div>
-      <div className="grid grid-cols-3 gap-6 mb-8">
+      <div className="print-grid-3 gap-4 mb-4">
         {[
-          { icon: <LuMonitor size={28} />, title: 'Client (Brauzer)', subtitle: 'HTML, CSS, JavaScript', tags: ['DOM', 'Fetch API', 'UI'], gradient: 'icon-3d-blue' },
-          { icon: <LuSettings size={28} />, title: 'Server (Backend)', subtitle: 'Python, Flask', tags: ['Routes', 'API', 'Logic'], gradient: 'icon-3d-purple' },
-          { icon: <LuDatabase size={28} />, title: 'Database (Baza)', subtitle: 'SQLite, PostgreSQL', tags: ['Tables', 'CRUD', 'SQL'], gradient: 'icon-3d-emerald' },
+          { icon: <LuMonitor size={22} />, title: 'Client (Brauzer)', subtitle: 'HTML, CSS, JavaScript', tags: ['DOM', 'Fetch API', 'UI'], color: 'bg-blue-600' },
+          { icon: <LuSettings size={22} />, title: 'Server (Backend)', subtitle: 'Python, Flask', tags: ['Routes', 'API', 'Logic'], color: 'bg-purple-600' },
+          { icon: <LuDatabase size={22} />, title: 'Database (Baza)', subtitle: 'SQLite, PostgreSQL', tags: ['Tables', 'CRUD', 'SQL'], color: 'bg-emerald-600' },
         ].map(node => (
-          <div key={node.title} className="p-6 rounded-3xl glass-card text-center">
-            <div className={`icon-3d ${node.gradient} mx-auto mb-4`}>{node.icon}</div>
-            <h3 className="font-bold text-base mb-1">{node.title}</h3>
-            <p className="text-xs text-surface-500 dark:text-surface-400 mb-3">{node.subtitle}</p>
-            <div className="flex flex-wrap justify-center gap-1.5">
+          <div key={node.title} className="p-5 rounded-2xl print-card text-center">
+            <div className={`w-10 h-10 rounded-xl ${node.color} flex items-center justify-center text-white mx-auto mb-3`}>{node.icon}</div>
+            <h3 className="font-bold text-sm mb-0.5">{node.title}</h3>
+            <p className="text-[10px] text-surface-500 dark:text-surface-400 mb-2">{node.subtitle}</p>
+            <div className="flex flex-wrap justify-center gap-1">
               {node.tags.map(tag => (
-                <span key={tag} className="px-2.5 py-1 text-[11px] font-medium rounded-lg bg-surface-100/80 dark:bg-surface-800/60 text-surface-500 dark:text-surface-400">{tag}</span>
+                <span key={tag} className="px-2 py-0.5 text-[9px] font-medium rounded bg-surface-100 dark:bg-surface-800 text-surface-500 dark:text-surface-400">{tag}</span>
               ))}
             </div>
           </div>
         ))}
       </div>
-      <div className="flex flex-wrap justify-center gap-8 text-sm text-surface-500 dark:text-surface-400">
+      <div className="flex justify-center gap-6 text-xs text-surface-500 dark:text-surface-400">
         {[
-          { label: 'Frontend', desc: "foydalanuvchi ko'radi", color: 'bg-gradient-to-r from-blue-400 to-blue-500' },
-          { label: 'Backend', desc: 'mantiq va hisob-kitob', color: 'bg-gradient-to-r from-purple-400 to-purple-500' },
-          { label: 'Database', desc: "ma'lumotlar saqlanadi", color: 'bg-gradient-to-r from-emerald-400 to-emerald-500' },
+          { label: 'Frontend', desc: "foydalanuvchi ko'radi", color: 'bg-blue-500' },
+          { label: 'Backend', desc: 'mantiq va hisob-kitob', color: 'bg-purple-500' },
+          { label: 'Database', desc: "ma'lumotlar saqlanadi", color: 'bg-emerald-500' },
         ].map(item => (
-          <span key={item.label} className="flex items-center gap-2.5">
-            <span className={`w-3.5 h-3.5 rounded-md ${item.color} shadow-sm`} />
-            <span className="font-medium text-surface-700 dark:text-surface-300">{item.label}</span>
+          <span key={item.label} className="flex items-center gap-1.5">
+            <span className={`w-2.5 h-2.5 rounded ${item.color}`} />
+            <span className="font-medium">{item.label}</span>
             <span className="text-surface-400 dark:text-surface-500">— {item.desc}</span>
           </span>
         ))}
@@ -187,79 +180,79 @@ function PrintableRoadmap() {
   const { months } = data
 
   return (
-    <div className="max-w-[960px] mx-auto px-5 sm:px-8 py-12">
-      <div className="mb-10">
-        <h1 className="text-[32px] sm:text-[40px] font-bold tracking-[-0.025em] leading-[1.15] mb-3">Yo'l xaritasi</h1>
-        <p className="text-surface-500 dark:text-surface-400 leading-relaxed">
-          12 hafta &middot; 3 oy &middot; Bosqichma-bosqich dasturlashni o'rganing
+    <div className="px-8 py-8">
+      <div className="mb-6">
+        <h1 className="text-3xl font-bold tracking-tight mb-2">Yo'l xaritasi</h1>
+        <p className="text-sm text-surface-500 dark:text-surface-400">
+          12 hafta · 3 oy · Bosqichma-bosqich dasturlashni o'rganing
         </p>
       </div>
 
       {months.map(month => {
         const colors = monthColorMap[month.color] || monthColorMap.blue
         return (
-          <section key={month.id} className="mb-16" aria-label={`${month.id}-oy`}>
-            <div className={`border-l-[3px] ${colors.border} pl-5 mb-8`}>
-              <div className="flex items-center gap-3 mb-1.5">
-                <MappedIcon name={month.icon} size={24} />
-                <h2 className="text-xl sm:text-2xl font-bold tracking-tight">{month.id}-oy: {month.title}</h2>
+          <section key={month.id} className="mb-8">
+            <div className={`border-l-[3px] ${colors.border} pl-4 mb-4`}>
+              <div className="flex items-center gap-2 mb-1">
+                <MappedIcon name={month.icon} size={20} />
+                <h2 className="text-lg font-bold tracking-tight">{month.id}-oy: {month.title}</h2>
               </div>
-              <p className="text-sm text-surface-500 dark:text-surface-400">{month.subtitle}</p>
+              <p className="text-xs text-surface-500 dark:text-surface-400">{month.subtitle}</p>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2">
               {month.weeks.map(week => (
-                <div key={week.id} className="rounded-2xl border border-surface-200/80 dark:border-surface-800/80 overflow-hidden bg-white dark:bg-surface-900/30 shadow-sm pdf-no-break">
+                <div key={week.id} className="rounded-xl border border-surface-200 dark:border-surface-700 overflow-hidden print-card-solid pdf-no-break">
                   {/* Week header */}
-                  <div className="flex items-center gap-4 p-5 sm:p-6 border-b border-surface-100 dark:border-surface-800/80">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold shrink-0 bg-surface-100 text-surface-500 dark:bg-surface-800 dark:text-surface-400">
+                  <div className="flex items-center gap-3 px-4 py-3 border-b border-surface-100 dark:border-surface-800">
+                    <div className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold bg-surface-100 text-surface-500 dark:bg-surface-800 dark:text-surface-400">
                       {week.id}
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-[15px]">{week.id}-hafta: {week.title}</h3>
-                      <p className="text-xs text-surface-500 dark:text-surface-400 mt-0.5">{week.goal}</p>
+                    <div>
+                      <h3 className="font-semibold text-sm">{week.id}-hafta: {week.title}</h3>
+                      <p className="text-[10px] text-surface-500 dark:text-surface-400">{week.goal}</p>
                     </div>
                   </div>
 
-                  {/* Week body — always expanded */}
-                  <div className="px-5 sm:px-6 pb-6 space-y-5 pt-5">
+                  {/* Week body */}
+                  <div className="px-4 pb-4 space-y-3 pt-3">
                     {/* Maqsad */}
-                    <div className="p-4 rounded-xl bg-primary-50/40 dark:bg-primary-950/20 border border-primary-100/80 dark:border-primary-900/30">
-                      <p className="text-xs font-semibold text-primary-700 dark:text-primary-300 mb-1.5 uppercase tracking-wider">Maqsad</p>
-                      <p className="text-sm text-surface-700 dark:text-surface-300 leading-relaxed">{week.goal}</p>
+                    <div className="p-3 rounded-lg bg-primary-50/60 dark:bg-primary-950/20 border border-primary-100 dark:border-primary-900/30">
+                      <p className="text-[10px] font-semibold text-primary-700 dark:text-primary-300 mb-1 uppercase tracking-wider">Maqsad</p>
+                      <p className="text-xs text-surface-700 dark:text-surface-300 leading-relaxed">{week.goal}</p>
                     </div>
 
                     {/* Topshiriqlar */}
                     <div>
-                      <h4 className="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">Topshiriqlar</h4>
-                      <div className="space-y-1">
+                      <h4 className="text-[10px] font-semibold text-surface-400 uppercase tracking-wider mb-2">Topshiriqlar</h4>
+                      <div className="space-y-0.5">
                         {week.tasks.map((task, idx) => (
-                          <div key={idx} className="flex items-start gap-3 p-3 rounded-xl">
-                            <input type="checkbox" disabled className="mt-0.5 shrink-0" />
-                            <span className="text-sm leading-relaxed text-surface-700 dark:text-surface-300">{task}</span>
+                          <div key={idx} className="flex items-start gap-2 py-1 px-2">
+                            <span className="w-3 h-3 mt-0.5 shrink-0 rounded border border-surface-300 dark:border-surface-600" />
+                            <span className="text-xs leading-relaxed text-surface-700 dark:text-surface-300">{task}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
                     {/* Natija */}
-                    <div className="p-4 rounded-xl bg-emerald-50/40 dark:bg-emerald-950/20 border border-emerald-100/80 dark:border-emerald-900/30">
-                      <p className="text-xs font-semibold text-emerald-700 dark:text-emerald-300 mb-1.5 uppercase tracking-wider">Natija</p>
-                      <p className="text-sm text-surface-700 dark:text-surface-300 leading-relaxed">{week.deliverable}</p>
+                    <div className="p-3 rounded-lg bg-emerald-50/60 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900/30">
+                      <p className="text-[10px] font-semibold text-emerald-700 dark:text-emerald-300 mb-1 uppercase tracking-wider">Natija</p>
+                      <p className="text-xs text-surface-700 dark:text-surface-300 leading-relaxed">{week.deliverable}</p>
                     </div>
 
                     {/* AI foydalanish */}
                     {week.aiUsage && (
-                      <div className="p-4 rounded-xl bg-violet-50/40 dark:bg-violet-950/20 border border-violet-100/80 dark:border-violet-900/30">
-                        <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 mb-1.5 uppercase tracking-wider">AI'dan foydalanish</p>
-                        <p className="text-sm text-surface-700 dark:text-surface-300 leading-relaxed">{week.aiUsage}</p>
+                      <div className="p-3 rounded-lg bg-violet-50/60 dark:bg-violet-950/20 border border-violet-100 dark:border-violet-900/30">
+                        <p className="text-[10px] font-semibold text-violet-700 dark:text-violet-300 mb-1 uppercase tracking-wider">AI'dan foydalanish</p>
+                        <p className="text-xs text-surface-700 dark:text-surface-300 leading-relaxed">{week.aiUsage}</p>
                       </div>
                     )}
 
                     {/* Texnologiyalar */}
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5">
                       {week.technologies.map(tech => (
-                        <span key={tech} className="px-3 py-1.5 text-xs rounded-lg bg-surface-100/80 dark:bg-surface-800/80 text-surface-600 dark:text-surface-400 font-medium border border-surface-200/50 dark:border-surface-700/50">
+                        <span key={tech} className="px-2 py-1 text-[10px] rounded-md bg-surface-100 dark:bg-surface-800 text-surface-600 dark:text-surface-400 font-medium border border-surface-200 dark:border-surface-700">
                           {tech}
                         </span>
                       ))}
@@ -268,17 +261,13 @@ function PrintableRoadmap() {
                     {/* Resurslar */}
                     {week.resources && week.resources.length > 0 && (
                       <div>
-                        <h4 className="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">Tavsiya resurslar</h4>
-                        <div className="space-y-0.5">
-                          {week.resources.map((res, idx) => (
-                            <div key={idx} className="flex items-center gap-2.5 p-2.5 rounded-xl">
-                              <svg className="w-3.5 h-3.5 text-primary-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                              </svg>
-                              <span className="text-sm text-primary-600 dark:text-primary-400">{res.title}</span>
-                            </div>
-                          ))}
-                        </div>
+                        <h4 className="text-[10px] font-semibold text-surface-400 uppercase tracking-wider mb-1.5">Tavsiya resurslar</h4>
+                        {week.resources.map((res, idx) => (
+                          <div key={idx} className="flex items-center gap-1.5 py-0.5 px-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary-500 shrink-0" />
+                            <span className="text-xs text-primary-600 dark:text-primary-400">{res.title}</span>
+                          </div>
+                        ))}
                       </div>
                     )}
                   </div>
@@ -305,62 +294,60 @@ function PrintableAIRules() {
   const { aiRules } = data
 
   return (
-    <div className="max-w-[960px] mx-auto px-5 sm:px-8 py-12">
-      <div className="mb-12">
-        <h1 className="text-[32px] sm:text-[40px] font-bold tracking-[-0.025em] leading-[1.15] mb-4">
+    <div className="px-8 py-8">
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold tracking-tight mb-2">
           AI'dan to'g'ri foydalanish qoidalari
         </h1>
-        <p className="text-surface-500 dark:text-surface-400 leading-relaxed max-w-2xl text-[17px]">
+        <p className="text-sm text-surface-500 dark:text-surface-400 leading-relaxed max-w-2xl">
           AI vositalari o'rganishni tezlashtiradi — lekin noto'g'ri ishlatilsa, bilimingiz yuzaki bo'lib qoladi.
         </p>
       </div>
 
       {/* Warning */}
-      <div className="mb-14 p-6 rounded-2xl bg-amber-50/50 dark:bg-amber-950/15 border border-amber-200/50 dark:border-amber-800/40">
-        <h2 className="font-bold text-lg mb-2 flex items-center gap-2.5">
-          <svg className="w-5 h-5 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="mb-8 p-4 rounded-xl bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800/40">
+        <h2 className="font-bold text-sm mb-1 flex items-center gap-2">
+          <svg className="w-4 h-4 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
           </svg>
           Muhim eslatma
         </h2>
-        <p className="text-sm text-surface-700 dark:text-surface-300 leading-relaxed">
-          Tadqiqotlar ko'rsatadiki, AI'ga to'liq tayanib kod yozganlar keyingi testlarda
-          <strong> ~17% past</strong> natija ko'rsatgan. Maqsad: AI sizni <strong>kuchaytirsin</strong>, almashtirib qo'ymasin.
+        <p className="text-xs text-surface-700 dark:text-surface-300 leading-relaxed">
+          AI'ga to'liq tayanib kod yozganlar testlarda <strong>~17% past</strong> natija ko'rsatgan. Maqsad: AI sizni <strong>kuchaytirsin</strong>, almashtirib qo'ymasin.
         </p>
       </div>
 
-      {/* Rules — all expanded */}
-      <div className="space-y-5 mb-16">
+      {/* Rules */}
+      <div className="space-y-3 mb-8">
         {aiRules.map(rule => (
-          <div key={rule.id} className="rounded-2xl border border-surface-200/80 dark:border-surface-800/80 overflow-hidden bg-white dark:bg-surface-900/30 shadow-sm pdf-no-break">
-            <div className="p-6 sm:p-7">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-primary-50 dark:bg-primary-950/30 border border-primary-100/80 dark:border-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 shrink-0">
-                  <MappedIcon name={rule.icon} size={24} />
+          <div key={rule.id} className="rounded-xl border border-surface-200 dark:border-surface-700 overflow-hidden print-card-solid pdf-no-break">
+            <div className="p-4">
+              <div className="flex items-start gap-3 mb-2">
+                <div className="w-9 h-9 rounded-lg bg-primary-50 dark:bg-primary-950/30 border border-primary-100 dark:border-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400 shrink-0">
+                  <MappedIcon name={rule.icon} size={18} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg tracking-tight">{rule.title}</h3>
-                  <p className="text-xs text-surface-400 mt-0.5 font-medium">{rule.titleEn}</p>
+                  <h3 className="font-bold text-sm">{rule.title}</h3>
+                  <p className="text-[10px] text-surface-400 font-medium">{rule.titleEn}</p>
                 </div>
               </div>
-              <p className="text-[15px] text-surface-600 dark:text-surface-400 leading-relaxed mb-5">{rule.description}</p>
+              <p className="text-xs text-surface-600 dark:text-surface-400 leading-relaxed mb-3">{rule.description}</p>
             </div>
 
-            {/* Details — always visible */}
-            <div className="px-6 sm:px-7 pb-7 space-y-5 border-t border-surface-100 dark:border-surface-800/80 pt-5">
-              <p className="text-sm text-surface-600 dark:text-surface-400 leading-relaxed whitespace-pre-line">{rule.details}</p>
+            <div className="px-4 pb-4 space-y-3 border-t border-surface-100 dark:border-surface-800 pt-3">
+              <p className="text-xs text-surface-600 dark:text-surface-400 leading-relaxed whitespace-pre-line">{rule.details}</p>
               {rule.examples && rule.examples.length > 0 && (
-                <div className="space-y-3">
-                  <h4 className="text-xs font-semibold text-surface-400 uppercase tracking-wider">Misollar</h4>
+                <div className="space-y-2">
+                  <h4 className="text-[10px] font-semibold text-surface-400 uppercase tracking-wider">Misollar</h4>
                   {rule.examples.map((ex, idx) => (
-                    <div key={idx} className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      <div className="p-4 rounded-xl bg-red-50/50 dark:bg-red-950/15 border border-red-100/80 dark:border-red-900/30">
-                        <p className="text-[11px] font-semibold text-red-500 dark:text-red-400 uppercase mb-2 tracking-wider">Noto'g'ri</p>
-                        <p className="text-sm text-surface-700 dark:text-surface-300 leading-relaxed">{ex.bad}</p>
+                    <div key={idx} className="print-grid-2 gap-2">
+                      <div className="p-3 rounded-lg bg-red-50 dark:bg-red-950/15 border border-red-100 dark:border-red-900/30">
+                        <p className="text-[9px] font-semibold text-red-500 uppercase mb-1 tracking-wider">Noto'g'ri</p>
+                        <p className="text-xs text-surface-700 dark:text-surface-300">{ex.bad}</p>
                       </div>
-                      <div className="p-4 rounded-xl bg-emerald-50/50 dark:bg-emerald-950/15 border border-emerald-100/80 dark:border-emerald-900/30">
-                        <p className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 uppercase mb-2 tracking-wider">To'g'ri</p>
-                        <p className="text-sm text-surface-700 dark:text-surface-300 leading-relaxed">{ex.good}</p>
+                      <div className="p-3 rounded-lg bg-emerald-50 dark:bg-emerald-950/15 border border-emerald-100 dark:border-emerald-900/30">
+                        <p className="text-[9px] font-semibold text-emerald-600 uppercase mb-1 tracking-wider">To'g'ri</p>
+                        <p className="text-xs text-surface-700 dark:text-surface-300">{ex.good}</p>
                       </div>
                     </div>
                   ))}
@@ -372,23 +359,23 @@ function PrintableAIRules() {
       </div>
 
       {/* Prompt Examples */}
-      <div className="mb-16">
-        <h2 className="text-2xl font-bold tracking-tight mb-2">AI'ga qanday savol berish kerak?</h2>
-        <p className="text-surface-500 dark:text-surface-400 mb-8">3 ta real misol — noto'g'ri va to'g'ri yondashuvlar.</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="mb-8">
+        <h2 className="text-lg font-bold tracking-tight mb-1">AI'ga qanday savol berish kerak?</h2>
+        <p className="text-xs text-surface-500 dark:text-surface-400 mb-4">3 ta real misol — noto'g'ri va to'g'ri yondashuvlar.</p>
+        <div className="print-grid-3 gap-3">
           {promptExamples.map((ex, idx) => (
-            <div key={idx} className="rounded-2xl border border-surface-200/80 dark:border-surface-800/80 bg-white dark:bg-surface-900/30 overflow-hidden shadow-sm">
-              <div className="p-5 pb-4">
-                <div className="text-xs font-semibold text-surface-400 uppercase tracking-wider mb-3">{ex.title}</div>
+            <div key={idx} className="rounded-xl border border-surface-200 dark:border-surface-700 print-card-solid overflow-hidden">
+              <div className="p-3 pb-2">
+                <div className="text-[10px] font-semibold text-surface-400 uppercase tracking-wider mb-2">{ex.title}</div>
               </div>
-              <div className="px-5 pb-5">
-                <div className="p-3.5 rounded-xl bg-red-50/60 dark:bg-red-950/15 border border-red-100/80 dark:border-red-900/30 mb-3">
-                  <p className="text-[11px] font-semibold text-red-500 dark:text-red-400 uppercase mb-1.5 tracking-wider">Noto'g'ri</p>
-                  <p className="text-sm text-surface-700 dark:text-surface-300">{ex.bad}</p>
+              <div className="px-3 pb-3">
+                <div className="p-2.5 rounded-lg bg-red-50 dark:bg-red-950/15 border border-red-100 dark:border-red-900/30 mb-2">
+                  <p className="text-[9px] font-semibold text-red-500 uppercase mb-1">Noto'g'ri</p>
+                  <p className="text-[11px] text-surface-700 dark:text-surface-300">{ex.bad}</p>
                 </div>
-                <div className="p-3.5 rounded-xl bg-emerald-50/60 dark:bg-emerald-950/15 border border-emerald-100/80 dark:border-emerald-900/30">
-                  <p className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 uppercase mb-1.5 tracking-wider">To'g'ri</p>
-                  <p className="text-sm text-surface-700 dark:text-surface-300">{ex.good}</p>
+                <div className="p-2.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/15 border border-emerald-100 dark:border-emerald-900/30">
+                  <p className="text-[9px] font-semibold text-emerald-600 uppercase mb-1">To'g'ri</p>
+                  <p className="text-[11px] text-surface-700 dark:text-surface-300">{ex.good}</p>
                 </div>
               </div>
             </div>
@@ -397,31 +384,31 @@ function PrintableAIRules() {
       </div>
 
       {/* AI Usage Table */}
-      <div className="p-6 sm:p-8 rounded-2xl bg-surface-50/80 dark:bg-surface-900/40 border border-surface-200/60 dark:border-surface-800/60">
-        <h2 className="font-bold text-xl tracking-tight mb-6">Bosqichlar bo'yicha AI foydalanish</h2>
-        <table className="w-full text-sm">
+      <div className="p-5 rounded-xl bg-surface-50 dark:bg-surface-900/40 border border-surface-200 dark:border-surface-700">
+        <h2 className="font-bold text-base mb-4">Bosqichlar bo'yicha AI foydalanish</h2>
+        <table className="w-full text-xs">
           <thead>
-            <tr className="border-b border-surface-200/80 dark:border-surface-700/80">
-              <th className="text-left py-3.5 pr-6 font-semibold text-surface-900 dark:text-surface-100">Bosqich</th>
-              <th className="text-left py-3.5 pr-6 font-semibold text-surface-900 dark:text-surface-100">AI roli</th>
-              <th className="text-left py-3.5 font-semibold text-surface-900 dark:text-surface-100">Ruxsat berilgan</th>
+            <tr className="border-b border-surface-200 dark:border-surface-700">
+              <th className="text-left py-2.5 pr-4 font-semibold">Bosqich</th>
+              <th className="text-left py-2.5 pr-4 font-semibold">AI roli</th>
+              <th className="text-left py-2.5 font-semibold">Ruxsat berilgan</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-surface-100 dark:divide-surface-800/80">
+          <tbody className="divide-y divide-surface-100 dark:divide-surface-800">
             <tr>
-              <td className="py-4 pr-6"><span className="inline-flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-blue-500" /><span className="font-medium">1-oy</span></span></td>
-              <td className="py-4 pr-6 text-surface-600 dark:text-surface-400">O'qituvchi</td>
-              <td className="py-4 text-surface-600 dark:text-surface-400">Savol-javob, tushuntirish, xato izohi. Kod yozish YO'Q.</td>
+              <td className="py-3 pr-4"><span className="inline-flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-blue-500" /><span className="font-medium">1-oy</span></span></td>
+              <td className="py-3 pr-4 text-surface-600 dark:text-surface-400">O'qituvchi</td>
+              <td className="py-3 text-surface-600 dark:text-surface-400">Savol-javob, tushuntirish, xato izohi. Kod yozish YO'Q.</td>
             </tr>
             <tr>
-              <td className="py-4 pr-6"><span className="inline-flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-violet-500" /><span className="font-medium">2-oy</span></span></td>
-              <td className="py-4 pr-6 text-surface-600 dark:text-surface-400">Yordamchi</td>
-              <td className="py-4 text-surface-600 dark:text-surface-400">Kod review, Copilot, debugging yordam.</td>
+              <td className="py-3 pr-4"><span className="inline-flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-violet-500" /><span className="font-medium">2-oy</span></span></td>
+              <td className="py-3 pr-4 text-surface-600 dark:text-surface-400">Yordamchi</td>
+              <td className="py-3 text-surface-600 dark:text-surface-400">Kod review, Copilot, debugging yordam.</td>
             </tr>
             <tr>
-              <td className="py-4 pr-6"><span className="inline-flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-emerald-500" /><span className="font-medium">3-oy</span></span></td>
-              <td className="py-4 pr-6 text-surface-600 dark:text-surface-400">Sherik</td>
-              <td className="py-4 text-surface-600 dark:text-surface-400">Boilerplate, refaktoring, test. Arxitektura — SIZ.</td>
+              <td className="py-3 pr-4"><span className="inline-flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-emerald-500" /><span className="font-medium">3-oy</span></span></td>
+              <td className="py-3 pr-4 text-surface-600 dark:text-surface-400">Sherik</td>
+              <td className="py-3 text-surface-600 dark:text-surface-400">Boilerplate, refaktoring, test. Arxitektura — SIZ.</td>
             </tr>
           </tbody>
         </table>
@@ -437,42 +424,42 @@ function PrintableResources() {
   const { resources } = data
 
   return (
-    <div className="max-w-[960px] mx-auto px-5 sm:px-8 py-12">
-      <div className="mb-12">
-        <h1 className="text-[32px] sm:text-[40px] font-bold tracking-[-0.025em] leading-[1.15] mb-4">Foydali resurslar</h1>
-        <p className="text-surface-500 dark:text-surface-400 leading-relaxed max-w-2xl text-[17px]">
-          Dasturlashni o'rganish uchun eng yaxshi bepul va pullik manbalar — texnologiya bo'yicha tartiblangan.
+    <div className="px-8 py-8">
+      <div className="mb-6">
+        <h1 className="text-3xl font-bold tracking-tight mb-2">Foydali resurslar</h1>
+        <p className="text-sm text-surface-500 dark:text-surface-400 leading-relaxed max-w-2xl">
+          Dasturlashni o'rganish uchun eng yaxshi bepul va pullik manbalar.
         </p>
       </div>
 
-      <div className="mb-10 p-6 rounded-2xl bg-primary-50/40 dark:bg-primary-950/15 border border-primary-100/60 dark:border-primary-900/30">
-        <div className="flex items-start gap-3">
-          <svg className="w-5 h-5 text-primary-600 dark:text-primary-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="mb-6 p-4 rounded-xl bg-primary-50/60 dark:bg-primary-950/15 border border-primary-100 dark:border-primary-900/30">
+        <div className="flex items-start gap-2">
+          <svg className="w-4 h-4 text-primary-600 dark:text-primary-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
           <div>
-            <h2 className="font-semibold text-sm mb-1.5 text-primary-700 dark:text-primary-300">Maslahat</h2>
-            <p className="text-sm text-surface-700 dark:text-surface-300 leading-relaxed">
+            <h2 className="font-semibold text-xs mb-1 text-primary-700 dark:text-primary-300">Maslahat</h2>
+            <p className="text-xs text-surface-700 dark:text-surface-300 leading-relaxed">
               Bir vaqtda ko'p resurs o'rganmang — bitta tanlang va oxirigacha boring.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="print-grid-2 gap-4">
         {resources.map(cat => (
-          <div key={cat.category} className="p-6 sm:p-7 rounded-2xl border border-surface-200/80 dark:border-surface-800/80 bg-white dark:bg-surface-900/30 shadow-sm pdf-no-break">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-xl bg-surface-100 dark:bg-surface-800/80 flex items-center justify-center text-surface-600 dark:text-surface-300">
-                <MappedIcon name={cat.icon} size={20} />
+          <div key={cat.category} className="p-5 rounded-xl border border-surface-200 dark:border-surface-700 print-card-solid pdf-no-break">
+            <div className="flex items-center gap-2.5 mb-4">
+              <div className="w-8 h-8 rounded-lg bg-surface-100 dark:bg-surface-800 flex items-center justify-center text-surface-600 dark:text-surface-300">
+                <MappedIcon name={cat.icon} size={16} />
               </div>
-              <h3 className="font-bold text-lg tracking-tight">{cat.category}</h3>
+              <h3 className="font-bold text-sm">{cat.category}</h3>
             </div>
             <div className="space-y-0.5">
               {cat.items.map((item, idx) => (
-                <div key={idx} className="p-3 rounded-xl">
-                  <p className="text-sm font-medium text-primary-600 dark:text-primary-400 mb-0.5">{item.title}</p>
-                  <p className="text-xs text-surface-500 dark:text-surface-400 leading-relaxed">{item.description}</p>
+                <div key={idx} className="py-1.5 px-2">
+                  <p className="text-xs font-medium text-primary-600 dark:text-primary-400 mb-0.5">{item.title}</p>
+                  <p className="text-[10px] text-surface-500 dark:text-surface-400 leading-relaxed">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -486,27 +473,24 @@ function PrintableResources() {
 /* ============================================================
    MAIN PRINTABLE DOCUMENT
    ============================================================ */
-const PrintableDocumentContent = forwardRef(function PrintableDocumentContent({ theme }, ref) {
-  const themeClass = theme === 'dark' ? 'dark' : ''
-
+function PrintableDocumentContent() {
   return (
     <div
-      ref={ref}
       id="pdf-printable"
-      className={`printable-document ${themeClass} bg-white dark:bg-[#0a0a0a] text-surface-900 dark:text-surface-100`}
+      className="printable-document bg-white dark:bg-[#0a0a0a] text-surface-900 dark:text-surface-100"
     >
       {/* Cover / Title */}
-      <div className="px-8 pt-16 pb-12 text-center">
-        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 to-purple-600 flex items-center justify-center text-white shadow-lg mx-auto mb-6">
-          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="px-8 pt-12 pb-8 text-center">
+        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-500 to-purple-600 flex items-center justify-center text-white mx-auto mb-4">
+          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
         </div>
-        <h1 className="text-4xl font-extrabold tracking-tight mb-3">Coding + AI Roadmap</h1>
-        <p className="text-lg text-surface-500 dark:text-surface-400">
-          12 hafta &middot; 3 oy &middot; Bosqichma-bosqich dasturlashni o'rganing
+        <h1 className="text-3xl font-extrabold tracking-tight mb-2">Coding + AI Roadmap</h1>
+        <p className="text-sm text-surface-500 dark:text-surface-400">
+          12 hafta · 3 oy · Bosqichma-bosqich dasturlashni o'rganing
         </p>
-        <div className="mt-6 text-sm text-surface-400 dark:text-surface-500">
+        <div className="mt-3 text-xs text-surface-400 dark:text-surface-500">
           {new Date().toLocaleDateString('uz-UZ', { year: 'numeric', month: 'long', day: 'numeric' })}
         </div>
       </div>
@@ -532,19 +516,18 @@ const PrintableDocumentContent = forwardRef(function PrintableDocumentContent({ 
       </div>
 
       {/* Footer */}
-      <div className="mt-12 py-8 border-t border-surface-200/60 dark:border-surface-800/60 text-center text-sm text-surface-400 dark:text-surface-500">
+      <div className="mt-6 py-4 border-t border-surface-200/60 dark:border-surface-800/60 text-center text-xs text-surface-400 dark:text-surface-500">
         <p>Coding + AI Roadmap UZ — coding-ai-roadmap-uz</p>
-        <p className="mt-1">{new Date().toLocaleDateString('uz-UZ')}</p>
       </div>
     </div>
   )
-})
+}
 
 /* Portal wrapper — renders outside #root into #pdf-root */
-function PrintableDocument(props) {
+function PrintableDocument() {
   const container = document.getElementById('pdf-root')
   if (!container) return null
-  return createPortal(<PrintableDocumentContent {...props} />, container)
+  return createPortal(<PrintableDocumentContent />, container)
 }
 
 export default PrintableDocument
